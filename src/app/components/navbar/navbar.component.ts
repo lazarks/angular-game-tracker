@@ -9,11 +9,12 @@ export class NavbarComponent implements OnInit {
   @Input() transparent: boolean = false;
   showLinks: boolean = false;
 
-  toggle(): void {
-    this.showLinks = !this.showLinks;
-  }
-
   constructor() {}
 
   ngOnInit(): void {}
+
+  toggle() {
+    this.showLinks = !this.showLinks;
+    console.log('works');
+  }
 }
