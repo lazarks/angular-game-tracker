@@ -1,0 +1,129 @@
+.hero {
+  height: 90vh; // 100vh - 10vh(navbar)
+  max-height: 1000px;
+  background: transparent;
+  padding: 0 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  // transition: 0.5s;
+
+  video {
+    z-index: -2;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    opacity: 0.75;
+  }
+
+  .overlay {
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100%;
+    // background: #f8af4f93;
+    background: rgba(153, 109, 49, 0.93);
+
+    // not supported in MS Edge
+    // currently on the backlog
+    mix-blend-mode: overlay;
+  }
+
+  .text {
+    // background-color: red;
+    width: fit-content;
+    position: relative;
+
+    padding: 30px;
+    z-index: 10;
+
+    h2,
+    h3 {
+      font-size: 3rem;
+      font-weight: 800;
+      line-height: 1em;
+      text-transform: uppercase;
+    }
+
+    h3 {
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin: 20px 0;
+      font-weight: 400;
+      max-width: 600px;
+    }
+
+    a {
+      background-color: #fff;
+      color: #111;
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 30px;
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-decoration: none;
+      text-transform: uppercase;
+
+      opacity: 1;
+      transition: 0.2s;
+
+      &:hover {
+        letter-spacing: 6px;
+      }
+    }
+  }
+
+  @media (max-width: 798px) {
+    .hero {
+      padding: 40px 10px;
+
+      .text {
+        h2 {
+          font-size: 2.5rem;
+        }
+        h3 {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+}
+
+.recommended {
+  height: 100vh;
+  max-height: 1000px;
+  background-color: #f3f3f3;
+  color: #111;
+}
+
+// overall responsiveness
+@media (max-height: 500px) {
+  .hero {
+    min-height: 90vh;
+    height: auto;
+
+    .text {
+      margin-top: 0;
+      padding: 0 5px;
+    }
+  }
+
+  .contact,
+  .about,
+  .recommended {
+    min-height: 100vh;
+    height: 700px;
+  }
+
+  // footer
+}
