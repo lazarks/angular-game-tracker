@@ -106,6 +106,120 @@
   color: #111;
 }
 
+.contact {
+  height: 100vh;
+  max-height: 1000px;
+
+  .title {
+    position: relative;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .title-main {
+      font-size: 2.3rem;
+      letter-spacing: 1rem;
+    }
+    .title-add {
+      letter-spacing: 0.1rem;
+      font-size: 1rem;
+      color: #f8af4f;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: -1;
+      background: #018dff;
+      mix-blend-mode: overlay;
+    }
+  }
+  .content {
+    background-color: #f3f3f3;
+    color: #111;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .flex-wrapper {
+      // background: orange;
+      display: flex;
+      gap: 40px;
+      .info {
+        // background-color: rgba(255, 0, 0, 0.103);
+        table {
+          border-spacing: 15px;
+          font-size: 1.2rem;
+
+          i {
+            font-size: 1.3rem;
+          }
+        }
+      }
+
+      .form {
+        padding: 15px;
+        // background-color: #999;
+        .form-group.user-info {
+          display: flex;
+          // background-color: red;
+          justify-content: space-between;
+        }
+        input {
+          padding: 10px;
+          font-size: 1.1rem;
+          margin-bottom: 10px;
+        }
+
+        #name,
+        #email {
+          width: 48%;
+        }
+
+        #message {
+          width: 100%;
+        }
+
+        .form-group:last-child {
+          text-align: end;
+
+          input {
+            background-color: #111;
+            color: #f3f3f3;
+            padding: 5px 10px;
+            font-weight: 300;
+            cursor: pointer;
+            transition: 0.3s;
+            border: none;
+
+            &:hover {
+              padding-left: 20px;
+              letter-spacing: 0.5rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 900px) {
+    .info {
+      display: flex;
+      justify-content: center;
+    }
+    .flex-wrapper {
+      width: 90%;
+      flex-direction: column;
+    }
+  }
+}
+
 // overall responsiveness
 @media (max-height: 500px) {
   .hero {
