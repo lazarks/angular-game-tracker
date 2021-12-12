@@ -5,10 +5,19 @@
   margin: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+}
+html {
   scroll-behavior: smooth;
 }
-
 body {
   background-color: #111;
   color: #f3f3f3;
+  overflow-x: hidden;
+
+  .max-width-wrapper {
+    margin: 0 auto;
+    max-width: 2000px;
+  }
 }
+
+//slickjs
