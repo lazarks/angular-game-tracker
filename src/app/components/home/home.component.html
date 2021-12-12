@@ -1,1 +1,25 @@
-<app-navbar></app-navbar> helo
+<app-navbar [transparent]="true"></app-navbar>
+<section class="hero">
+  <video
+    loop
+    autoplay
+    oncanplay="this.play()"
+    muted
+    onloadedmetadata="this.muted = true"
+  >
+    <source src="../../../assets/video.mp4" />
+  </video>
+  <div class="overlay"></div>
+
+  <div class="text">
+    <h2>Never Stop</h2>
+    <h3>Exploring The World</h3>
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus nemo
+      velit a vel qui distinctio, voluptas repellendus reprehenderit nam magnam.
+    </p>
+    <a href="#recommended">Explore</a>
+  </div>
+</section>
+
+<section class="recommended" id="recommended"></section>
