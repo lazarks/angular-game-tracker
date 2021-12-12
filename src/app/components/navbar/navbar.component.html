@@ -1,0 +1,16 @@
+<nav
+  [ngStyle]="{ background: transparent ? 'transparent' : '#999' }"
+  [ngClass]="showLinks ? 'hasActiveLinks' : ''"
+>
+  <div class="logo">Logo</div>
+  <div class="toggle-button" (click)="toggle()">
+    <i class="fas fa-bars"></i>
+  </div>
+  <div class="links" [ngClass]="showLinks ? 'active' : ''">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Recepies</a></li>
+      <li><a href="#">Saved</a></li>
+    </ul>
+  </div>
+</nav>
