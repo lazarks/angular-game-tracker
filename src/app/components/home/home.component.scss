@@ -99,6 +99,74 @@
   }
 }
 
+.about {
+  height: fit-content;
+  max-height: 1000px;
+  background-color: #f3f3f3;
+  color: #111;
+
+  .section-title {
+    text-align: center;
+    font-size: 2rem;
+    letter-spacing: 0.2rem;
+    padding: 2rem;
+
+    .sub-title {
+      font-size: 1rem;
+      letter-spacing: 0.1rem;
+      color: orange;
+      font-style: italic;
+    }
+  }
+
+  .content {
+    position: relative;
+    padding: 0 40px 40px;
+    width: 60%;
+    margin: 0 auto;
+
+    .showcase {
+      margin-top: 50px;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+
+      .card {
+        padding: 10px;
+        cursor: pointer;
+        transition: 0.3s;
+
+        .name {
+          text-align: center;
+          font-size: 1.4rem;
+          font-weight: 500;
+          padding: 5px;
+          margin-bottom: 10px;
+        }
+
+        img {
+          width: 150px;
+        }
+
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+
+  @media (max-width: 900px) {
+    .content {
+      width: 80%;
+    }
+  }
+
+  @media (max-width: 720px) {
+    .content {
+      width: 100%;
+    }
+  }
+}
 .recommended {
   height: 100vh;
   max-height: 1000px;
