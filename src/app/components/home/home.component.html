@@ -69,6 +69,34 @@
 
 <section class="recommended">
   <div class="section-title">Recommended</div>
+  <ngx-slick-carousel
+    class="carousel"
+    #slickModal="slick-carousel"
+    [config]="slideConfig"
+    (init)="slickInit($event)"
+    (breakpoint)="breakpoint($event)"
+    (afterChange)="afterChange($event)"
+    (beforeChange)="beforeChange($event)"
+  >
+    <div
+      ngxSlickItem
+      *ngFor="let slide of slides; let i = index"
+      [attr.data-index]="i"
+      class="slide"
+    >
+      <div class="card">
+        <div class="title">Title</div>
+        <img src="{{ slide.img }}" alt="" />
+        <div class="description">
+          <div class="id">id: {{ i }}</div>
+          <div>Lorem ipsum dolor sit amet.</div>
+          <div>Lorem, ipsum dolor.</div>
+          <div>Lorem, ipsum dolor.</div>
+          <div>Lorem, ipsum dolor.</div>
+        </div>
+      </div>
+    </div>
+  </ngx-slick-carousel>
 </section>
 
 <section class="contact">

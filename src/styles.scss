@@ -21,3 +21,58 @@ body {
 }
 
 //slickjs
+.slick-slider {
+  width: 88%;
+  margin: auto;
+  // background: cyan;
+
+  .slick-arrow {
+    font-size: 0;
+    z-index: 10;
+    width: 30px;
+    height: 60px;
+    transition: 0.3s;
+    &:hover {
+      height: 65px;
+      width: 35px;
+    }
+
+    &.slick-prev:before,
+    &.slick-next:before {
+      color: transparent;
+    }
+
+    &.slick-prev {
+      left: 0;
+      background: url("assets/sl-arrow_l.svg") 0 0 / 100% no-repeat;
+    }
+    &.slick-next {
+      right: 0;
+      background: url("assets/sl-arrow_r.svg") 0 0 / 100% no-repeat;
+    }
+  }
+
+  .slick-dots {
+    // background-color: #fff !important;
+    left: 0;
+
+    li button {
+      background-color: #fff;
+      border-radius: 50%;
+      transition: 0.3s;
+      width: 10px;
+      height: 10px;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+      &::before {
+        content: "";
+      }
+    }
+
+    li.slick-active button {
+      background-color: #ff9f4f !important;
+    }
+  }
+}
