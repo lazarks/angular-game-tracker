@@ -1,17 +1,17 @@
 <nav
   [ngStyle]="{
-    background: transparent ? 'transparent' : '#999'
+    background: transparent ? 'transparent' : '#111'
   }"
   [ngClass]="showLinks ? 'hasActiveLinks' : ''"
 >
-  <div class="logo">Logo</div>
+  <div class="logo" routerLink="">Logo</div>
   <div class="toggle-button" (click)="toggle()">
     <i class="fas fa-bars"></i>
   </div>
   <div class="links" [ngClass]="showLinks ? 'active' : ''">
     <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Recepies</a></li>
+      <li><a routerLink="">Home</a></li>
+      <li><a routerLink="/recepies">Recepies</a></li>
       <li><a href="#">Saved</a></li>
     </ul>
   </div>
