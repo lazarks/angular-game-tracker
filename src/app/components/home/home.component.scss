@@ -121,6 +121,7 @@
   }
 
   .content {
+    // background: orange;
     padding: 40px;
     width: 100%;
     display: flex;
@@ -130,6 +131,7 @@
 
     .container {
       padding: 2rem;
+      min-width: 400px;
       max-width: 700px;
       display: flex;
       flex-direction: column;
@@ -164,7 +166,9 @@
 
     .showcase {
       img {
-        width: 600px;
+        width: 100%;
+        min-width: 400px;
+        max-width: 850px;
         // background-color: #111;
       }
     }
@@ -172,13 +176,8 @@
 
   @media (max-width: 900px) {
     .content {
-      width: 80%;
-    }
-  }
-
-  @media (max-width: 720px) {
-    .content {
-      width: 100%;
+      padding: 1rem;
+      flex-direction: column-reverse;
     }
   }
 }
@@ -395,9 +394,7 @@ footer {
     }
   }
 
-  .contact,
-  .about,
-  .recommended {
+  section {
     min-height: 100vh;
     height: 700px;
   }
