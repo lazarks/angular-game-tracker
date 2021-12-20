@@ -1,2 +1,33 @@
 <app-navbar [transparent]="false"></app-navbar>
-<p>games works!</p>
+<div class="cont-wrapper">
+  <div class="container">
+    <div class="games">
+      <ng-container *ngFor="let game of games">
+        <div class="game">
+          <div class="game-thumbnail-container">
+            <img
+              *ngIf="game.background_image"
+              src="{{ game.background_image }}"
+              alt="game-thumbnail"
+              class="game-thumbnail"
+            />
+            <p *ngIf="!game.background_image">No image</p>
+          </div>
+          <div class="game-description">
+            <p class="game-name">{{ game.name }}</p>
+            <div class="game-platforms">
+              <img
+                *ngFor="let gamePlatform of game.parent_platforms"
+                src="../../../assets/platforms/{{
+                  gamePlatform.platform.name
+                }}.svg"
+                alt="{{ gamePlatform.platform.name }}"
+                class="game-platform"
+              />
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>
