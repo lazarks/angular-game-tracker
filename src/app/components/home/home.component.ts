@@ -36,19 +36,19 @@ export class HomeComponent implements OnInit {
   }
 
   slickInit(e: Object) {
-    console.log('slick initialized');
+    // console.log('slick initialized');
   }
 
   breakpoint(e: Object) {
-    console.log('breakpoint');
+    // console.log('breakpoint');
   }
 
   afterChange(e: Object) {
-    console.log('afterChange');
+    // console.log('afterChange');
   }
 
   beforeChange(e: Object) {
-    console.log('beforeChange');
+    // console.log('beforeChange');
   }
 
   constructor() {}
