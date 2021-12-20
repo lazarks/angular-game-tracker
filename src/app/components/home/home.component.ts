@@ -7,12 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   slides = [
-    { img: '../../../assets/images/recommended/food-image-1.jpg' },
-    { img: '../../../assets/images/recommended/food-image-2.jpg' },
-    { img: '../../../assets/images/recommended/food-image-3.jpg' },
-    { img: '../../../assets/images/recommended/food-image-4.jpg' },
-    { img: '../../../assets/images/recommended/food-image-5.jpg' },
-    { img: '../../../assets/images/recommended/food-image-6.jpg' },
+    { img: '../../../assets/background/2066813.jpg' },
+    { img: '../../../assets/background/2066813.jpg' },
+    { img: '../../../assets/background/2066813.jpg' },
+    { img: '../../../assets/background/2066813.jpg' },
+    { img: '../../../assets/background/2066813.jpg' },
   ];
   slideConfig = {
     slidesToShow: 3,

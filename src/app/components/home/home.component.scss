@@ -26,8 +26,8 @@
     left: 0;
     width: 100%;
     min-height: 100%;
-    // background: #f8af4f93;
-    background: rgba(153, 109, 49, 0.93);
+    // background-color: darkcyan;
+    // opacity: 0.5;
 
     // not supported in MS Edge
     // currently on the backlog
@@ -251,7 +251,7 @@
       height: 100%;
       width: 100%;
       z-index: -1;
-      background: #018dff;
+      background: #833ab4;
       mix-blend-mode: overlay;
     }
   }
