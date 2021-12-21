@@ -3,8 +3,8 @@ nav {
   justify-content: space-around;
   align-items: center;
 
-  min-height: 10vh;
-  max-height: 10vh;
+  height: 10vh;
+  max-height: 50px;
   z-index: 9999;
 
   position: relative; // because of overlays
@@ -123,6 +123,7 @@ nav {
 
 @media (max-height: 400px) {
   nav {
+    max-height: 10vh;
     padding: 0 1rem;
     .logo {
       font-size: 0.8rem;
