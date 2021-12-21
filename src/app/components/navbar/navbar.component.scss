@@ -3,7 +3,7 @@ nav {
   justify-content: space-around;
   align-items: center;
 
-  height: 10vh;
+  min-height: 10vh;
   max-height: 50px;
   z-index: 9999;
 
@@ -62,7 +62,6 @@ nav {
     padding: 0 2rem;
     justify-content: space-between;
     align-items: center;
-    min-height: 10vh;
     height: fit-content !important;
 
     .toggle-button {
@@ -131,5 +130,11 @@ nav {
     .toggle-button i {
       font-size: 0.8rem;
     }
+  }
+}
+
+@media (min-height: 1000px) {
+  nav {
+    min-height: 60px;
   }
 }

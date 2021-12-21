@@ -10,6 +10,7 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { GamesComponent } from './components/games/games.component';
 import { HttpErrorsInterceptor } from './interceptors/http-errors.interceptor';
 import { HttpHeadersInterceptor } from './interceptors/http-headers.interceptor';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, NavbarComponent, GamesComponent],
@@ -18,6 +19,8 @@ import { HttpHeadersInterceptor } from './interceptors/http-headers.interceptor'
     AppRoutingModule,
     SlickCarouselModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [
     {

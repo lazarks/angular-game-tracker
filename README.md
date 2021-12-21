@@ -2,5 +2,7 @@
 
 home
 games
-saved
+saved (my games)
 login/register
+
+games page layout finished, needs refactoring once functionalities are implemented !!!
