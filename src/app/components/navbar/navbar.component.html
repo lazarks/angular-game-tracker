@@ -10,9 +10,25 @@
   </div>
   <div class="links" [ngClass]="showLinks ? 'active' : ''">
     <ul>
-      <li><a routerLink="">Home</a></li>
-      <li><a routerLink="/games">Games</a></li>
-      <li><a href="#">Saved</a></li>
+      <li>
+        <a
+          class="nav-link"
+          routerLink=""
+          routerLinkActive="activeRoute"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Home</a
+        >
+      </li>
+      <li>
+        <a
+          class="nav-link"
+          routerLink="/games"
+          routerLinkActive="activeRoute"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Games</a
+        >
+      </li>
+      <li><a class="nav-link" href="#">Saved</a></li>
     </ul>
   </div>
 </nav>

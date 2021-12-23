@@ -42,13 +42,15 @@ nav {
     li {
       list-style: none;
 
-      a {
+      .nav-link {
         text-decoration: none;
-        color: #fff;
+        color: #ddd;
         padding: 1rem;
 
+        &.activeRoute,
         &:hover {
-          color: #fff7;
+          color: #fff;
+          font-weight: 600;
           text-shadow: 0px 0px 10px #111;
           transition: 0.5s;
         }
