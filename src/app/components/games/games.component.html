@@ -42,10 +42,17 @@
     <h4>Genres</h4>
     <!-- temp genres -->
     <div class="filter genres">
-      <div class="genre" *ngFor="let genre of genres">
-        <input type="checkbox" id="genre.name" value="genre.name" />
-        <label for="genre.name">{{ genre.name }}</label>
-      </div>
+      <form>
+        <div class="genre" *ngFor="let genre of genres">
+          <input
+            type="checkbox"
+            id="{{ genre.name }}"
+            value="{{ genre.slug }}"
+            (change)="addGenre($event)"
+          />
+          <label for="{{ genre.name }}">{{ genre.name }}</label>
+        </div>
+      </form>
     </div>
   </div>
   <div class="container">

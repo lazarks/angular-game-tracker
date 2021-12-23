@@ -12,12 +12,18 @@ export class HttpService {
 
   getGameList(
     ordering: string,
-    search?: string
+    search?: string,
+    genres?: Array<string>
   ): Observable<APIResponse<Game>> {
     let params = new HttpParams().set('ordering', ordering);
-    console.log(ordering);
+
+    if (genres && genres.length != 0) {
+      params = params.set('genres', genres.toString());
+    }
+
     if (search) {
-      params = new HttpParams().set('search', search).set('ordering', ordering);
+      params = params.set('search', search);
+      // params = new HttpParams().set('search', search).set('ordering', ordering);
     }
 
     return this.http.get<APIResponse<Game>>(`${env.BASE_URL}/games`, {

@@ -12,8 +12,9 @@ import { HttpService } from 'src/app/services/http.service';
 export class GamesComponent implements OnInit, OnDestroy {
   public lastSearch!: string;
   public sort: string = '-added';
-  public games!: Array<Game>;
   public genres!: Array<Genre>;
+  public selectedGenres!: Array<string>;
+  public games!: Array<Game>;
 
   private routeSub!: Subscription;
   private gameSub!: Subscription;
@@ -21,7 +22,9 @@ export class GamesComponent implements OnInit, OnDestroy {
   constructor(
     private httpService: HttpService,
     private activatedRoute: ActivatedRoute
-  ) {}
+  ) {
+    this.selectedGenres = new Array<string>();
+  }
 
   ngOnInit(): void {
     this.routeSub = this.activatedRoute.params.subscribe((params: Params) => {
@@ -38,18 +41,31 @@ export class GamesComponent implements OnInit, OnDestroy {
     if (search) {
       this.lastSearch = search;
     }
+
     this.gameSub = this.httpService
-      .getGameList(sort, search)
+      .getGameList(sort, search, this.selectedGenres)
       .subscribe((gameList: APIResponse<Game>) => {
         this.games = gameList.results;
         console.log(gameList);
       });
   }
 
+  addGenre(event: Event): void {
+    if ((<HTMLInputElement>event.target).checked) {
+      this.selectedGenres.push((<HTMLInputElement>event.target).value);
+    } else {
+      this.selectedGenres.forEach((genre, index) => {
+        if (genre == (<HTMLInputElement>event.target).value) {
+          this.selectedGenres.splice(index, 1);
+        }
+      });
+    }
+    this.searchGames(this.sort);
+  }
+
   getGenres(): void {
     this.httpService.getGenresList().subscribe((list: APIResponse<Genre>) => {
       this.genres = list.results;
-      console.log(list);
     });
   }
 

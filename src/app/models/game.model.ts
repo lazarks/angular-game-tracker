@@ -19,6 +19,7 @@ export interface APIResponse<T> {
 
 export interface Genre {
   name: string;
+  slug: string;
 }
 
 interface ParentPlatforms {
