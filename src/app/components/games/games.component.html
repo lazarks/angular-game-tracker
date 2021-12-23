@@ -1,18 +1,26 @@
 <app-navbar [transparent]="false"></app-navbar>
 <div class="cont-wrapper">
   <div class="filters">
-    <h4>FILTER RESULTS</h4>
+    <h3>FILTER RESULTS</h3>
+    <h4>Sort By</h4>
     <div class="sort">
       <form>
         <div class="form-group">
-          <select class="form-control sortby" name="selectSort" id="selectSort">
-            <option selected disabled>Sort By:</option>
+          <select
+            class="form-control sortby"
+            name="selectSort"
+            id="selectSort"
+            [(ngModel)]="sort"
+            (change)="searchGames(sort, lastSearch)"
+            [ngModelOptions]="{ standalone: true }"
+            [value]="sort"
+          >
             <option value="name">Name</option>
-            <option value="-released">Released</option>
+            <option value="released">Released</option>
             <option value="-added">Added</option>
             <option value="-created">Created</option>
             <option value="-updated">Updated</option>
-            <option value="-rating">Rating</option>
+            <option value="rating">Rating</option>
             <option value="metacritic">Metacritic</option>
           </select>
         </div>

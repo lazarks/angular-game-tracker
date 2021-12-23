@@ -10,10 +10,14 @@ import { environment as env } from 'src/environments/environment';
 export class HttpService {
   constructor(private http: HttpClient) {}
 
-  getGameList(search?: string): Observable<APIResponse<Game>> {
-    let params;
+  getGameList(
+    ordering: string,
+    search?: string
+  ): Observable<APIResponse<Game>> {
+    let params = new HttpParams().set('ordering', ordering);
+    console.log(ordering);
     if (search) {
-      params = new HttpParams().set('search', search);
+      params = new HttpParams().set('search', search).set('ordering', ordering);
     }
 
     return this.http.get<APIResponse<Game>>(`${env.BASE_URL}/games`, {
