@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { APIResponse, Game } from 'src/app/models/game.model';
@@ -18,8 +17,7 @@ export class GamesComponent implements OnInit {
 
   constructor(
     private httpService: HttpService,
-    private activatedRoute: ActivatedRoute,
-    private router: Router
+    private activatedRoute: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
@@ -39,9 +37,5 @@ export class GamesComponent implements OnInit {
         this.games = gameList.results;
         console.log(gameList);
       });
-  }
-
-  onSubmit(form: NgForm): void {
-    this.router.navigate(['games/search', form.value.search]);
   }
 }
