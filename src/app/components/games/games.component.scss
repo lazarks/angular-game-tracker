@@ -83,7 +83,7 @@
 
       &.genres {
         // background-color: blue;
-        height: 200px;
+        height: 233px; // show only first 10 genres
         overflow-y: auto;
       }
     }
@@ -93,7 +93,7 @@
     background-color: #f3f3f3;
     max-width: 810px;
     padding: 1rem 0;
-    .games {
+    .gameList {
       // background-color: orange;
       display: flex;
       justify-content: center;

@@ -17,7 +17,7 @@ export interface APIResponse<T> {
   results: Array<T>;
 }
 
-interface Genre {
+export interface Genre {
   name: string;
 }
 

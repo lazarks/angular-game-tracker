@@ -1,6 +1,6 @@
 <app-navbar [transparent]="false"></app-navbar>
 <div class="cont-wrapper">
-  <div class="filters">
+  <div class="filters" *ngIf="games">
     <h3>FILTER RESULTS</h3>
     <h4>Sort By</h4>
     <div class="sort">
@@ -42,62 +42,16 @@
     <h4>Genres</h4>
     <!-- temp genres -->
     <div class="filter genres">
-      <input type="checkbox" id="pc" name="pc" value="PC" />
-      <label for="pc">PC</label><br />
-      <input type="checkbox" id="ps" name="ps" value="PlayStation" />
-      <label for="ps">PlayStation</label><br />
-      <input type="checkbox" id="xbox" name="xbox" value="Xbox" />
-      <label for="xbox">Xbox</label><br />
-      <input type="checkbox" id="android" name="android" value="Android" />
-      <label for="android">Android</label><br />
-      <input type="checkbox" id="ios" name="ios" value="iOS" />
-      <label for="ios">iOS</label><br />
-      <input type="checkbox" id="nintendo" name="nintendo" value="Nintendo" />
-      <label for="nintendo">Nintendo</label><br />
-      <input type="checkbox" id="pc" name="pc" value="PC" />
-      <label for="pc">PC</label><br />
-      <input type="checkbox" id="ps" name="ps" value="PlayStation" />
-      <label for="ps">PlayStation</label><br />
-      <input type="checkbox" id="xbox" name="xbox" value="Xbox" />
-      <label for="xbox">Xbox</label><br />
-      <input type="checkbox" id="android" name="android" value="Android" />
-      <label for="android">Android</label><br />
-      <input type="checkbox" id="ios" name="ios" value="iOS" />
-      <label for="ios">iOS</label><br />
-      <input type="checkbox" id="nintendo" name="nintendo" value="Nintendo" />
-      <label for="nintendo">Nintendo</label><br />
-      <input type="checkbox" id="pc" name="pc" value="PC" />
-      <label for="pc">PC</label><br />
-      <input type="checkbox" id="ps" name="ps" value="PlayStation" />
-      <label for="ps">PlayStation</label><br />
-      <input type="checkbox" id="xbox" name="xbox" value="Xbox" />
-      <label for="xbox">Xbox</label><br />
-      <input type="checkbox" id="android" name="android" value="Android" />
-      <label for="android">Android</label><br />
-      <input type="checkbox" id="ios" name="ios" value="iOS" />
-      <label for="ios">iOS</label><br />
-      <input type="checkbox" id="nintendo" name="nintendo" value="Nintendo" />
-      <label for="nintendo">Nintendo</label><br />
+      <div class="genre" *ngFor="let genre of genres">
+        <input type="checkbox" id="genre.name" value="genre.name" />
+        <label for="genre.name">{{ genre.name }}</label>
+      </div>
     </div>
   </div>
   <div class="container">
     <app-search></app-search>
 
-    <div class="games">
-      <!-- <div class="game">helo</div>
-      <div class="game">helo</div>
-      <div class="game">helo</div>
-      <div class="game">helo</div>
-      <div class="game">helo</div>
-      <div class="game">helo</div>
-      <div class="game">helo</div>
-      <div class="game">helo</div>
-      <div class="game">helo</div>
-      <div class="game">helo</div>
-      <div class="game">helo</div>
-      <div class="game">helo</div>
-      <div class="game">helo</div>
-      <div class="game">helo</div> -->
+    <div class="gameList">
       <ng-container *ngFor="let game of games">
         <div class="game">
           <div class="game-thumbnail-container">
