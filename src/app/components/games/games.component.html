@@ -74,7 +74,15 @@
   </div>
   <div class="container">
     <div class="search-box">
-      <input type="search" placeholder="Search your favourite game.." />
+      <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+        <input
+          ngModel
+          type="search"
+          id="srch"
+          name="search"
+          placeholder="Search your favourite game.."
+        />
+      </form>
     </div>
     <div class="games">
       <!-- <div class="game">helo</div>
