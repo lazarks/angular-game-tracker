@@ -43,7 +43,7 @@ export class GamesComponent implements OnInit, OnDestroy {
     }
 
     this.gameSub = this.httpService
-      .getGameList(sort, search, this.selectedGenres)
+      .getGameList(sort, this.lastSearch, this.selectedGenres)
       .subscribe((gameList: APIResponse<Game>) => {
         this.games = gameList.results;
         console.log(gameList);

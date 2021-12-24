@@ -21,22 +21,22 @@
             <option value="-created">Created</option>
             <option value="-updated">Updated</option>
             <option value="rating">Rating</option>
-            <option value="metacritic">Metacritic</option>
+            <option value="-metacritic">Metacritic</option>
           </select>
         </div>
       </form>
     </div>
     <h4>Platforms</h4>
     <div class="filter platforms">
-      <div class="wrapper">
-        <button>PC</button>
-        <button>PlayStation</button>
-        <button>Xbox</button>
-      </div>
-      <div class="wrapper">
-        <button>Android</button>
-        <button>iOS</button>
-        <button>Nintendo</button>
+      <div class="radio">
+        <input
+          class="radio-input"
+          type="radio"
+          value="pc"
+          name="platformRadio"
+          id="pRadio1"
+        />
+        <label class="radio-label" for="pRadio1">PC</label>
       </div>
     </div>
     <h4>Genres</h4>
