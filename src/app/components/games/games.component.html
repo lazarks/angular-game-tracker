@@ -2,6 +2,8 @@
 <div class="cont-wrapper">
   <div class="filters" *ngIf="games">
     <h3>FILTER RESULTS</h3>
+
+    <!-- sort -->
     <h4>Sort By</h4>
     <div class="sort">
       <form>
@@ -26,23 +28,27 @@
         </div>
       </form>
     </div>
+
+    <!-- platforms -->
     <h4>Platforms</h4>
     <div class="filter platforms">
       <div class="radio" *ngFor="let platform of platforms">
         <input
           class="radio-input"
           type="radio"
-          value="{{ platform.slug }}"
+          value="{{ platform.id }}"
           name="platformRadio"
           id="{{ platform.name }}"
+          (change)="searchByPlatform($event)"
         />
         <label class="radio-label" for="{{ platform.name }}">{{
           platform.name
         }}</label>
       </div>
     </div>
+
+    <!-- genres -->
     <h4>Genres</h4>
-    <!-- temp genres -->
     <div class="filter genres">
       <form>
         <div class="genre" *ngFor="let genre of genres">

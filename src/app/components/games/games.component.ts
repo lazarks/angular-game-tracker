@@ -1,3 +1,6 @@
+import { PlatformLocation } from '@angular/common';
+import { ThrowStmt } from '@angular/compiler';
+import { PipeCollector } from '@angular/compiler/src/template_parser/binding_parser';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
@@ -13,8 +16,10 @@ export class GamesComponent implements OnInit, OnDestroy {
   public lastSearch!: string;
   public sort: string = '-added';
   public platforms: Array<Platform>;
+  public selectedPlatform!: number;
   public genres!: Array<Genre>;
   public selectedGenres!: Array<string>;
+
   public games!: Array<Game>;
 
   private routeSub!: Subscription;
@@ -46,11 +51,23 @@ export class GamesComponent implements OnInit, OnDestroy {
     }
 
     this.gameSub = this.httpService
-      .getGameList(sort, this.lastSearch, this.selectedGenres)
+      .getGameList(
+        sort,
+        this.lastSearch,
+        this.selectedGenres,
+        this.selectedPlatform
+      )
       .subscribe((gameList: APIResponse<Game>) => {
         this.games = gameList.results;
         console.log(gameList);
       });
+  }
+  searchByPlatform(event: Event): void {
+    if ((<HTMLInputElement>event.target).checked) {
+      this.selectedPlatform = +(<HTMLInputElement>event.target).value;
+    }
+    console.log(this.selectedPlatform);
+    this.searchGames(this.sort);
   }
 
   addGenre(event: Event): void {
@@ -76,8 +93,11 @@ export class GamesComponent implements OnInit, OnDestroy {
     this.httpService
       .getParentPlatformList()
       .subscribe((list: APIResponse<Platform>) => {
+        console.log(list.results);
         list.results.forEach((item) => {
-          this.platforms.push(item);
+          if (item.id < 9) {
+            this.platforms.push(item);
+          }
         });
       });
   }
