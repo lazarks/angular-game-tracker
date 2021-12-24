@@ -28,15 +28,17 @@
     </div>
     <h4>Platforms</h4>
     <div class="filter platforms">
-      <div class="radio">
+      <div class="radio" *ngFor="let platform of platforms">
         <input
           class="radio-input"
           type="radio"
-          value="pc"
+          value="{{ platform.slug }}"
           name="platformRadio"
-          id="pRadio1"
+          id="{{ platform.name }}"
         />
-        <label class="radio-label" for="pRadio1">PC</label>
+        <label class="radio-label" for="{{ platform.name }}">{{
+          platform.name
+        }}</label>
       </div>
     </div>
     <h4>Genres</h4>
@@ -72,7 +74,6 @@
           </div>
           <div class="game-description">
             <p class="game-name">{{ game.name }}</p>
-            <!-- <p class="text">Lorem ipsum dolor sit amet.</p> -->
             <div class="game-platforms">
               <img
                 *ngFor="let gamePlatform of game.parent_platforms"

@@ -45,48 +45,58 @@
     .filter {
       // background-color: #999;
       padding: 0 0 0 0.5rem;
-
-      .radio {
+      &.platforms {
         // background-color: red;
-        display: flex;
-        flex-wrap: wrap;
-        margin-bottom: 10px;
+        padding: 10px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
 
-        .radio-input {
-          display: none;
-        }
+        .radio {
+          // background-color: pink;
+          display: flex;
 
-        .radio-input:checked + .radio-label {
-          background: #111;
-        }
+          .radio-input {
+            display: none;
+          }
 
-        .radio-label {
-          margin-top: 10px;
-          border-radius: 15px;
-          padding: 8px 14px;
-          color: #fff;
-          background: #999;
-          opacity: 1;
-          transition: background 0.1s;
-          cursor: pointer;
-          box-shadow: 2px 4px 10px #999;
+          .radio-input:checked + .radio-label {
+            background: #111;
+          }
 
-          &:hover {
-            opacity: 0.8;
-            transform: scale(1.05);
-            // background: #ddd;
+          .radio-label {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 0.9rem;
+            border-radius: 15px;
+            padding: 8px 14px;
+            color: #fff;
+            background: #999;
+            opacity: 1;
+            transition: 0.2s;
+            cursor: pointer;
+            box-shadow: 2px 4px 10px #999;
+
+            &:hover {
+              opacity: 0.8;
+              transform: scale(1.05);
+              // background: #ddd;
+            }
           }
         }
-      }
-
-      label {
-        margin-left: 10px;
       }
 
       &.genres {
         // background-color: blue;
         height: 233px; // show only first 10 genres
         overflow-y: auto;
+
+        label {
+          margin-left: 10px;
+        }
       }
     }
   }

@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { APIResponse, Game, Genre } from 'src/app/models/game.model';
+import { APIResponse, Game, Genre, Platform } from 'src/app/models/game.model';
 import { HttpService } from 'src/app/services/http.service';
 
 @Component({
@@ -12,6 +12,7 @@ import { HttpService } from 'src/app/services/http.service';
 export class GamesComponent implements OnInit, OnDestroy {
   public lastSearch!: string;
   public sort: string = '-added';
+  public platforms: Array<Platform>;
   public genres!: Array<Genre>;
   public selectedGenres!: Array<string>;
   public games!: Array<Game>;
@@ -24,6 +25,7 @@ export class GamesComponent implements OnInit, OnDestroy {
     private activatedRoute: ActivatedRoute
   ) {
     this.selectedGenres = new Array<string>();
+    this.platforms = new Array<Platform>();
   }
 
   ngOnInit(): void {
@@ -35,6 +37,7 @@ export class GamesComponent implements OnInit, OnDestroy {
       }
     });
     this.getGenres();
+    this.getPlatforms();
   }
 
   searchGames(sort: string, search?: string): void {
@@ -67,6 +70,16 @@ export class GamesComponent implements OnInit, OnDestroy {
     this.httpService.getGenresList().subscribe((list: APIResponse<Genre>) => {
       this.genres = list.results;
     });
+  }
+
+  getPlatforms(): void {
+    this.httpService
+      .getParentPlatformList()
+      .subscribe((list: APIResponse<Platform>) => {
+        list.results.forEach((item) => {
+          this.platforms.push(item);
+        });
+      });
   }
 
   ngOnDestroy(): void {

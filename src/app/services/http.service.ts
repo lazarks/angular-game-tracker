@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { APIResponse, Game, Genre } from '../models/game.model';
+import { APIResponse, Game, Genre, Platform } from '../models/game.model';
 import { environment as env } from 'src/environments/environment';
 
 @Injectable({
@@ -33,5 +33,10 @@ export class HttpService {
 
   getGenresList(): Observable<APIResponse<Genre>> {
     return this.http.get<APIResponse<Genre>>(`${env.BASE_URL}/genres`);
+  }
+  getParentPlatformList(): Observable<APIResponse<Platform>> {
+    return this.http.get<APIResponse<Platform>>(
+      `${env.BASE_URL}/platforms/lists/parents`
+    );
   }
 }

@@ -23,9 +23,13 @@ export interface Genre {
 }
 
 interface ParentPlatforms {
-  platform: {
-    name: string;
-  };
+  platform: Platform;
+}
+
+export interface Platform {
+  id: number;
+  name: string;
+  slug: string;
 }
 
 interface Publishers {
