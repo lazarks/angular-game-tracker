@@ -23,7 +23,10 @@ export class HttpService {
     }
 
     if (search) {
-      params = params.set('search', search);
+      params = params
+        .set('search_precise', true)
+        .set('search_exact', true)
+        .set('search', search);
       // params = new HttpParams().set('search', search).set('ordering', ordering);
     }
     if (platform) {
