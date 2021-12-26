@@ -43,4 +43,8 @@ export class HttpService {
       `${env.BASE_URL}/platforms/lists/parents`
     );
   }
+
+  getGameDetails(id: string): any {
+    return this.http.get(`${env.BASE_URL}/games/${id}`);
+  }
 }
