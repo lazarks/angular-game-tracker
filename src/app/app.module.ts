@@ -12,9 +12,10 @@ import { HttpErrorsInterceptor } from './interceptors/http-errors.interceptor';
 import { HttpHeadersInterceptor } from './interceptors/http-headers.interceptor';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SearchComponent } from './components/games/search/search.component';
+import { OverviewComponent } from './components/overview/overview.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, NavbarComponent, GamesComponent, SearchComponent],
+  declarations: [AppComponent, HomeComponent, NavbarComponent, GamesComponent, SearchComponent, OverviewComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

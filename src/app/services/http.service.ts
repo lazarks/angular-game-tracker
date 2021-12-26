@@ -23,7 +23,10 @@ export class HttpService {
     }
 
     if (search) {
-      params = params.set('search', search);
+      params = params
+        .set('search_precise', true)
+        .set('search_exact', true)
+        .set('search', search);
       // params = new HttpParams().set('search', search).set('ordering', ordering);
     }
     if (platform) {
@@ -42,5 +45,9 @@ export class HttpService {
     return this.http.get<APIResponse<Platform>>(
       `${env.BASE_URL}/platforms/lists/parents`
     );
+  }
+
+  getGameDetails(id: string): any {
+    return this.http.get(`${env.BASE_URL}/games/${id}`);
   }
 }

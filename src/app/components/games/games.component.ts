@@ -27,7 +27,8 @@ export class GamesComponent implements OnInit, OnDestroy {
 
   constructor(
     private httpService: HttpService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private router: Router
   ) {
     this.selectedGenres = new Array<string>();
     this.platforms = new Array<Platform>();
@@ -100,6 +101,10 @@ export class GamesComponent implements OnInit, OnDestroy {
           }
         });
       });
+  }
+
+  openGameOverview(id: string): void {
+    this.router.navigate(['overview', id]);
   }
 
   ngOnDestroy(): void {
