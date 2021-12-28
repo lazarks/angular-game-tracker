@@ -1,0 +1,111 @@
+.overlay {
+  background-color: #f3f3f3;
+  color: #111;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+
+  .box {
+    border-radius: 3px;
+    background-color: #fff;
+    box-shadow: 2px 4px 10px #999;
+    position: relative;
+    padding: 18px 20px;
+  }
+
+  header {
+    padding: 30px 30px 0;
+    .box {
+      height: 505px;
+      background: url("https://media.rawg.io/media/games/618/618c2031a07bbff6b4f611f10b6bcdbc.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-position-y: 0;
+      background-attachment: fixed;
+      transition: 0.6s;
+
+      &:hover {
+        background-position-y: -10px;
+      }
+
+      @media (min-height: 900px) {
+        background-size: auto;
+      }
+    }
+  }
+
+  .row {
+    padding: 30px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 238px;
+    grid-gap: 30px;
+
+    .box {
+      transition: 0.2s;
+      position: relative;
+      overflow: auto;
+
+      &:hover {
+        transition: 0.6s;
+        transform: scale(1.05);
+      }
+      &.wide-span:hover .box-overlay {
+        left: -100%;
+      }
+      &.tall-span:hover .box-overlay {
+        top: -100%;
+      }
+
+      .box-overlay {
+        background: #fff9;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: 0.3s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #666;
+        font-size: 2.5rem;
+        font-weight: 500;
+      }
+
+      &.tall-span {
+        grid-row: span 2;
+      }
+      &.wide-span {
+        grid-column: span 2;
+      }
+
+      &#description {
+        text-align: justify;
+        overflow: auto;
+
+        .content {
+          position: relative;
+        }
+      }
+
+      &#screenshots {
+        grid-row: span 2;
+      }
+    }
+
+    @media (max-width: 800px) {
+      grid-template-columns: 1fr;
+
+      .box {
+        &.tall-span {
+          grid-row: span 1;
+        }
+        &.wide-span {
+          grid-column: span 1;
+        }
+      }
+    }
+  }
+}

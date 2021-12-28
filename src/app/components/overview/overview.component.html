@@ -1,4 +1,68 @@
-<p>overview works!</p>
-<div *ngIf="game">
-  <h3>{{ game.name }}</h3>
+<div class="overlay">
+  <app-navbar [transparent]="false"></app-navbar>
+  <header>
+    <div class="box"></div>
+  </header>
+
+  <!-- grid -->
+  <div class="row">
+    <div class="box tall-span" id="overall">
+      <!-- <div class="box-overlay">overall</div> -->
+      <div class="name">The Witcher 3: Wild Hunt</div>
+      <div class="release-date">Release Date: <span>2015-05-18</span></div>
+      <div class="website">
+        Website:
+        <a href="https://thewitcher.com/en/witcher3"
+          >https://thewitcher.com/en/witcher3</a
+        >
+      </div>
+      <div class="developers">
+        <div class="dev-img">
+          <img
+            src="https://media.rawg.io/media/games/26d/26d4437715bee60138dab4a7c8c59c92.jpg"
+            alt="developerImg"
+            height="150px"
+          />
+        </div>
+        <div class="dev-name">Developers: <span>CD PROJEKT RED</span></div>
+        <div class="publisher">Publishers: <span>CD PROJECT RED</span></div>
+      </div>
+    </div>
+    <div class="box wide-span" id="description">
+      <div class="content">
+        <!-- <div class="box-overlay">Description</div> -->
+        "
+        <p>
+          The third game in a series, it holds nothing back from the player.
+          Open world adventures of the renowned monster slayer Geralt of Rivia
+          are now even on a larger scale. Following the source material more
+          accurately, this time Geralt is trying to find the child of the
+          prophecy, Ciri while making a quick coin from various contracts on the
+          side. Great attention to the world building above all creates an
+          immersive story, where your decisions will shape the world around you.
+        </p>
+        <p>
+          CD Project Red are infamous for the amount of work they put into their
+          games, and it shows, because aside from classic third-person action
+          RPG base game they provided 2 massive DLCs with unique questlines and
+          16 smaller DLCs, containing extra quests and items.
+        </p>
+        <p>
+          Players praise the game for its atmosphere and a wide open world that
+          finds the balance between fantasy elements and realistic and
+          believable mechanics, and the game deserved numerous awards for every
+          aspect of the game, from music to direction.
+        </p>
+        "
+      </div>
+    </div>
+    <div class="box">rating</div>
+    <div class="box">metacritic</div>
+    <div class="box wide-span tall-span" id="reddit">reddit</div>
+    <div class="box">platforms & stores</div>
+    <div class="box tall-span">tags</div>
+    <div class="box">genres</div>
+    <div class="box wide-span" id="screenshots">screenhots</div>
+    <div class="box wide-span" id="other">Other Games</div>
+  </div>
 </div>
