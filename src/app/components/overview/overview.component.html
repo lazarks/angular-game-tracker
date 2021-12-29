@@ -1,71 +1,61 @@
 <div class="overlay">
   <app-navbar [transparent]="false"></app-navbar>
-  <header>
-    <div class="box"></div>
+  <header *ngIf="game">
+    <div
+      class="box"
+      [style.backgroundImage]="'url(' + game.background_image + ')'"
+    ></div>
   </header>
 
   <!-- grid -->
-  <div class="row">
+  <div class="row" *ngIf="game">
     <!-- OVERALL -->
     <div class="box" id="overall">
       <!-- <div class="box-overlay">overall</div> -->
-      <div class="name">The Witcher 3: Wild Hunt</div>
-      <div class="release-date">Release Date: <span>2015-05-18</span></div>
+      <div class="name">{{ game.name }}</div>
+      <div class="release-date">
+        Release Date: <span>{{ game.released }}</span>
+      </div>
       <div class="website">
-        <a href="https://thewitcher.com/en/witcher3">Official Website</a>
+        <a target="_blank" href="{{ game.website }}">Official Website</a>
       </div>
       <div class="genres">
-        <span>Action</span><span>Adventure</span><span>RPG</span>
+        <span *ngFor="let genre of game.genres">{{ genre.name }}</span>
       </div>
     </div>
 
     <!-- DESCRIPTION -->
     <div class="box wide-span tall-span" id="description">
-      <div class="content">
-        <!-- <div class="box-overlay">Description</div> -->
-        <p>
-          The third game in a series, it holds nothing back from the player.
-          Open world adventures of the renowned monster slayer Geralt of Rivia
-          are now even on a larger scale. Following the source material more
-          accurately, this time Geralt is trying to find the child of the
-          prophecy, Ciri while making a quick coin from various contracts on the
-          side. Great attention to the world building above all creates an
-          immersive story, where your decisions will shape the world around you.
-        </p>
-        <p>
-          CD Project Red are infamous for the amount of work they put into their
-          games, and it shows, because aside from classic third-person action
-          RPG base game they provided 2 massive DLCs with unique questlines and
-          16 smaller DLCs, containing extra quests and items.
-        </p>
-        <p>
-          Players praise the game for its atmosphere and a wide open world that
-          finds the balance between fantasy elements and realistic and
-          believable mechanics, and the game deserved numerous awards for every
-          aspect of the game, from music to direction.
-        </p>
-      </div>
+      <div class="content" [innerHTML]="game.description"></div>
     </div>
 
     <!-- DEVELOPERS -->
     <div class="box" id="developers">
       <img
-        src="https://media.rawg.io/media/games/26d/26d4437715bee60138dab4a7c8c59c92.jpg"
+        src="{{ game.developers[0].image_background }}"
         alt="developerImg"
         height="100px"
       />
 
-      <div class="team">Developers: <span>CD PROJEKT RED</span></div>
-      <div class="team">Publishers: <span>CD PROJEKT RED</span></div>
+      <div class="team">
+        Developers: <span>{{ game.developers[0].name }}</span>
+      </div>
+      <div class="team">
+        Publishers: <span>{{ game.publishers[0].name }}</span>
+      </div>
     </div>
 
+    <!-- RATING -->
     <div class="box" id="rating">
       <div class="subtitle">Rating</div>
       <div class="content">
-        <div class="value"><span>4.59</span>/5</div>
+        <div class="value">
+          <span>{{ game.rating }}</span
+          >/{{ game.rating_top }}
+        </div>
         <star-rating
-          [value]="4.59"
-          [totalstars]="5"
+          [value]="game.rating"
+          [totalstars]="game.rating_top"
           checkedcolor="orange"
           uncheckedcolor="black"
           size="52px"
@@ -78,40 +68,23 @@
       <section class="platforms">
         <div class="subtitle">Playable on</div>
         <div class="content">
-          <span>PC</span><span>PlayStation</span><span>Xbox</span
-          ><span>Nintendo</span>
+          <span *ngFor="let platform of game.parent_platforms">{{
+            platform.platform.name
+          }}</span>
         </div>
       </section>
       <section class="stores">
         <div class="subtitle">Available on</div>
         <div class="content">
-          <span>PlayStation Store</span><span>Xbox Stores</span
-          ><span>Nintendo Stores</span><span>Steam</span>
+          <span *ngFor="let storeP of game.stores">{{
+            storeP.store.name
+          }}</span>
         </div>
       </section>
       <section class="tags">
         <div class="subtitle">Tags</div>
         <div class="tags-content">
-          <span>SinglePlayer</span>
-          <span>Atmospheric</span>
-
-          <span>great soundtrack</span>
-          <span>rpg</span>
-          <span>story Rich</span>
-          <span>Open World</span>
-          <span>Third Person</span>
-          <span>Fantasy</span>
-          <span>Sandbox</span>
-          <span>Action RPG</span>
-          <span>Mature</span>
-          <span>Dark</span>
-          <span>Nudity</span>
-          <span>Choices</span>
-          <span>Matter</span>
-          <span>Dark Fantasy</span>
-          <span>Medieval</span>
-          <span>Magic</span>
-          <span>Multiple Endings</span>
+          <span *ngFor="let tag of game.tags">{{ tag.name }}</span>
         </div>
       </section>
     </div>
@@ -125,9 +98,8 @@
         >metacritic website</a
       >
     </div> -->
-
     <div class="box tall-span" id="other">Other Games</div>
-    <div class="box wide-span tall-span" id="reddit">reddit</div>
-    <div class="box wide-span" id="screenshots">screenhots</div>
+    <div class="box wide-span tall-span" id="screenshots">screenhots</div>
+    <div class="box tall-span" id="reddit">reddit</div>
   </div>
 </div>

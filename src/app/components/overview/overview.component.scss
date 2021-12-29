@@ -45,11 +45,15 @@
     .box {
       transition: 0.2s;
       position: relative;
-      overflow: auto;
+      overflow: hidden;
 
       &:hover {
         transition: 0.6s;
         transform: scale(1.05);
+        overflow: visible;
+        z-index: 999;
+        min-height: 100%;
+        height: fit-content;
       }
       &.wide-span:hover .box-overlay {
         left: -100%;
@@ -194,7 +198,6 @@
 
           span {
             color: #111;
-            text-align: right;
           }
         }
       }

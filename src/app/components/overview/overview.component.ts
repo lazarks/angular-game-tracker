@@ -21,19 +21,30 @@ export class OverviewComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    // this.routeSub = this.activatedRoute.params.subscribe((params: Params) => {
-    //   this.gameId = params['id'];
-    //   this.getGameDetails(this.gameId);
-    // });
+    this.routeSub = this.activatedRoute.params.subscribe((params: Params) => {
+      this.gameId = params['id'];
+      this.getGameDetails(this.gameId);
+      // this.getOtherGames(this.gameId);
+    });
   }
 
   getGameDetails(id: string): void {
     this.gameSub = this.httpService
       .getGameDetails(id)
       .subscribe((gameResp: Game) => {
+        // api bug, some games have rating > rating_top
+        if (gameResp.rating > gameResp.rating_top) {
+          gameResp.rating_top += 1; //
+        }
         this.game = gameResp;
         console.log(gameResp);
       });
+  }
+
+  getOtherGames(id: string): void {
+    this.httpService.getOtherGames(id).subscribe((response: any) => {
+      console.log(response);
+    });
   }
 
   ngOnDestroy(): void {
