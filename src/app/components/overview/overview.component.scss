@@ -199,8 +199,26 @@
         }
       }
 
-      &#screenshots {
-        grid-row: span 2;
+      &#rating {
+        .subtitle {
+          font-size: 1.4rem;
+        }
+
+        .content {
+          display: flex;
+          flex-direction: column-reverse;
+          justify-content: center;
+          align-items: center;
+          margin-top: 20px;
+          .value {
+            font-size: 1.2rem;
+            color: #666;
+            span {
+              font-size: 2rem;
+              color: red;
+            }
+          }
+        }
       }
     }
 

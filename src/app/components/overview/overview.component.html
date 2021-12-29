@@ -59,7 +59,20 @@
       <div class="team">Publishers: <span>CD PROJEKT RED</span></div>
     </div>
 
-    <div class="box">rating</div>
+    <div class="box" id="rating">
+      <div class="subtitle">Rating</div>
+      <div class="content">
+        <div class="value"><span>4.59</span>/5</div>
+        <star-rating
+          [value]="4.59"
+          [totalstars]="5"
+          checkedcolor="orange"
+          uncheckedcolor="black"
+          size="52px"
+          [readonly]="true"
+        ></star-rating>
+      </div>
+    </div>
 
     <div class="box tall-span" id="where">
       <section class="platforms">

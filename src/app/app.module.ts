@@ -13,9 +13,17 @@ import { HttpHeadersInterceptor } from './interceptors/http-headers.interceptor'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SearchComponent } from './components/games/search/search.component';
 import { OverviewComponent } from './components/overview/overview.component';
+import { RatingModule } from 'ng-starrating';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, NavbarComponent, GamesComponent, SearchComponent, OverviewComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    NavbarComponent,
+    GamesComponent,
+    SearchComponent,
+    OverviewComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -23,6 +31,7 @@ import { OverviewComponent } from './components/overview/overview.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    RatingModule,
   ],
   providers: [
     {
