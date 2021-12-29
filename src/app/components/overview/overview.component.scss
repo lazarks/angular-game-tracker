@@ -81,12 +81,121 @@
         grid-column: span 2;
       }
 
+      &#overall {
+        .name {
+          font-size: 1.5rem;
+        }
+        .release-date {
+          font-size: 1.05rem;
+          color: #666;
+          span {
+            color: #111;
+            font-size: 1.2rem;
+          }
+        }
+        .website {
+          text-align: center;
+
+          a {
+            font-size: 1.2rem;
+            font-weight: 400;
+            text-decoration: none;
+            color: #111;
+            display: inline-block;
+            margin: 1rem 1rem 0;
+            padding: 0.5rem;
+            border-radius: 3px;
+            transition: 0.2s;
+
+            outline: 1px solid #111;
+
+            &:hover {
+              letter-spacing: 1px;
+            }
+          }
+        }
+
+        .genres {
+          margin-top: 20px;
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+          span {
+            background-color: #111;
+            color: #fff;
+            padding: 6px 9px;
+            margin: 6px;
+            border-radius: 6px;
+            pointer-events: none;
+          }
+        }
+      }
+
       &#description {
         text-align: justify;
         overflow: auto;
 
         .content {
           position: relative;
+        }
+      }
+
+      &#where {
+        display: flex;
+        flex-direction: column;
+
+        section {
+          .subtitle {
+            font-size: 1.2rem;
+          }
+          .content {
+            margin: 10px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            span {
+              font-size: 0.9rem;
+              background-color: #111;
+              color: #fff;
+              padding: 6px 9px;
+              margin: 6px;
+              border-radius: 6px;
+              pointer-events: none;
+            }
+          }
+
+          .tags-content {
+            margin: 10px 0;
+            font-size: 0.9rem;
+            span {
+              padding: 0.5rem;
+              text-transform: capitalize;
+              transition: 0.3s;
+              &:hover {
+                font-weight: 800;
+              }
+              &::after {
+                content: ", ";
+              }
+            }
+          }
+        }
+      }
+
+      &#developers {
+        font-size: 1.05rem;
+        color: #666;
+        text-align: center;
+
+        .team {
+          margin-top: 10px;
+          display: flex;
+          justify-content: space-between;
+
+          span {
+            color: #111;
+            text-align: right;
+          }
         }
       }
 

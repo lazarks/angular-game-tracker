@@ -21,10 +21,10 @@ export class OverviewComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    this.routeSub = this.activatedRoute.params.subscribe((params: Params) => {
-      this.gameId = params['id'];
-      this.getGameDetails(this.gameId);
-    });
+    // this.routeSub = this.activatedRoute.params.subscribe((params: Params) => {
+    //   this.gameId = params['id'];
+    //   this.getGameDetails(this.gameId);
+    // });
   }
 
   getGameDetails(id: string): void {
