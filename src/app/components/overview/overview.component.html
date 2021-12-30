@@ -108,7 +108,26 @@
         </div>
       </div>
     </div>
-    <div class="box wide-span tall-span" id="screenshots">screenhots</div>
+    <div class="box wide-span tall-span" id="screenshots">
+      <div class="subtitle">Screenshots</div>
+      <div class="content">
+        <ngx-slick-carousel
+          class="carousel"
+          #slickModal="slick-carousel"
+          [config]="slideConfig"
+          (init)="slickInit($event)"
+          (breakpoint)="breakpoint($event)"
+          (afterChange)="afterChange($event)"
+          (beforeChange)="beforeChange($event)"
+        >
+          <div ngxSlickItem *ngFor="let img of slides" class="slide">
+            <a href="{{ img }}" target="_blank"
+              ><img src="{{ img }}" alt="screenshot"
+            /></a>
+          </div>
+        </ngx-slick-carousel>
+      </div>
+    </div>
     <div class="box tall-span" id="reddit">reddit</div>
   </div>
 </div>

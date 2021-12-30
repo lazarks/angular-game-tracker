@@ -57,7 +57,7 @@ body {
     left: 0;
 
     li button {
-      background-color: #fff;
+      background-color: #999;
       border-radius: 50%;
       transition: 0.3s;
       width: 10px;
@@ -72,7 +72,7 @@ body {
     }
 
     li.slick-active button {
-      background-color: #ff9f4f !important;
+      background-color: red !important;
     }
   }
 }

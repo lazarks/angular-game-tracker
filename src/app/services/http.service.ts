@@ -54,4 +54,8 @@ export class HttpService {
   getOtherGames(id: string): any {
     return this.http.get(`${env.BASE_URL}/games/${id}/game-series`);
   }
+
+  getScreenshots(id: string): any {
+    return this.http.get(`${env.BASE_URL}/games/${id}/screenshots`);
+  }
 }

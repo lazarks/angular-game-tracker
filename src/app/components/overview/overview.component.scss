@@ -269,6 +269,27 @@
           }
         }
       }
+
+      &#screenshots {
+        .subtitle {
+          font-size: 1.4rem;
+        }
+
+        .carousel {
+          padding: 40px 10px;
+          height: 100%;
+
+          .slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img {
+              height: 300px;
+              cursor: pointer;
+            }
+          }
+        }
+      }
     }
 
     @media (max-width: 800px) {

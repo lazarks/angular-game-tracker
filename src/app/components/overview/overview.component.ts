@@ -13,6 +13,8 @@ export class OverviewComponent implements OnInit, OnDestroy {
   gameId!: string;
   game!: Game;
   sameSeriesGames!: Array<Game>;
+  slides: string[];
+  slideConfig: Object;
 
   routeSub!: Subscription;
   gameSub!: Subscription;
@@ -20,13 +22,24 @@ export class OverviewComponent implements OnInit, OnDestroy {
   constructor(
     private activatedRoute: ActivatedRoute,
     private httpService: HttpService
-  ) {}
+  ) {
+    this.slideConfig = {
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: true,
+      dots: true,
+      autoplay: true,
+      autoplaySpeed: 3000,
+    };
+    this.slides = [];
+  }
 
   ngOnInit(): void {
     this.routeSub = this.activatedRoute.params.subscribe((params: Params) => {
       this.gameId = params['id'];
       this.getGameDetails(this.gameId);
       this.getOtherGames(this.gameId);
+      this.getGameScreenshots(this.gameId);
     });
   }
 
@@ -46,7 +59,14 @@ export class OverviewComponent implements OnInit, OnDestroy {
   getOtherGames(id: string): void {
     this.httpService.getOtherGames(id).subscribe((response: any) => {
       this.sameSeriesGames = response.results;
-      console.log(this.sameSeriesGames);
+    });
+  }
+
+  getGameScreenshots(id: string): void {
+    this.httpService.getScreenshots(id).subscribe((response: any) => {
+      response.results.forEach((obj: any) => {
+        this.slides.push(obj.image);
+      });
     });
   }
 
@@ -58,5 +78,29 @@ export class OverviewComponent implements OnInit, OnDestroy {
     if (this.routeSub) {
       this.routeSub.unsubscribe();
     }
+  }
+
+  addSlide() {
+    // this.slides.push({ img: 'http://placehold.it/350x150/777777' });
+  }
+
+  removeSlide() {
+    // this.slides.length = this.slides.length - 1;
+  }
+
+  slickInit(e: Object) {
+    // console.log('slick initialized');
+  }
+
+  breakpoint(e: Object) {
+    // console.log('breakpoint');
+  }
+
+  afterChange(e: Object) {
+    // console.log('afterChange');
+  }
+
+  beforeChange(e: Object) {
+    // console.log('beforeChange');
   }
 }
