@@ -123,6 +123,22 @@
         </ngx-slick-carousel>
       </div>
     </div>
-    <div class="box tall-span" id="reddit">reddit</div>
+
+    <!-- reddit -->
+    <div class="box tall-span" id="reddit" *ngIf="redditPosts">
+      <div class="subtitle">Recent posts on Reddit</div>
+      <div *ngFor="let post of redditPosts">
+        <div class="card" (click)="goTo(post.url)">
+          <img *ngIf="post.image" src="{{ post.image }}" alt="post-image" />
+          <div class="desc">
+            <div class="card-title">{{ post.name }}</div>
+            <div class="creation">
+              created by
+              <a href="{{ post.username_url }}">{{ post.username }}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

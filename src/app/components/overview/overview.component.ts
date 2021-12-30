@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Game } from 'src/app/models/game.model';
+import { Post } from 'src/app/models/post.model';
 import { HttpService } from 'src/app/services/http.service';
 
 @Component({
@@ -13,6 +14,8 @@ export class OverviewComponent implements OnInit, OnDestroy {
   gameId!: string;
   game!: Game;
   sameSeriesGames!: Array<Game>;
+  redditPosts!: Array<Post>;
+
   slides: string[];
   slideConfig: Object;
 
@@ -22,7 +25,7 @@ export class OverviewComponent implements OnInit, OnDestroy {
   constructor(
     private activatedRoute: ActivatedRoute,
     private httpService: HttpService,
-    private router: Router
+    public router: Router
   ) {
     this.slideConfig = {
       slidesToShow: 1,
@@ -41,6 +44,7 @@ export class OverviewComponent implements OnInit, OnDestroy {
       this.getGameDetails(this.gameId);
       this.getOtherGames(this.gameId);
       this.getGameScreenshots(this.gameId);
+      this.getRecentRedditPosts(this.gameId);
     });
   }
 
@@ -70,9 +74,19 @@ export class OverviewComponent implements OnInit, OnDestroy {
     });
   }
 
+  getRecentRedditPosts(id: string): void {
+    this.httpService.getRedditPosts(id).subscribe((response: any) => {
+      this.redditPosts = response.results;
+    });
+  }
+
   //other games func
   openGameOverview(id: string): void {
     this.router.navigate(['overview', id]);
+  }
+
+  goTo(url: string): void {
+    window.location.href = url;
   }
 
   ngOnDestroy(): void {

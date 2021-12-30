@@ -55,28 +55,6 @@
         min-height: 100%;
         height: fit-content;
       }
-      &.wide-span:hover .box-overlay {
-        left: -100%;
-      }
-      &.tall-span:hover .box-overlay {
-        top: -100%;
-      }
-
-      .box-overlay {
-        background: #fff9;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        transition: 0.3s;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: #666;
-        font-size: 2.5rem;
-        font-weight: 500;
-      }
 
       &.tall-span {
         grid-row: span 2;
@@ -284,8 +262,55 @@
             justify-content: center;
             align-items: center;
             img {
-              height: 300px;
+              width: 88%;
+              margin: auto;
               cursor: pointer;
+            }
+          }
+        }
+      }
+
+      &#reddit {
+        overflow: auto;
+
+        &:hover {
+          height: 100%;
+        }
+
+        .subtitle {
+          font-size: 1.4rem;
+        }
+
+        .card {
+          padding: 10px;
+          background-color: #f3f3f3;
+          color: #111;
+          margin-top: 10px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 10px;
+          font-size: 0.8rem;
+          cursor: pointer;
+          border-radius: 20px;
+
+          &:hover {
+            background-color: #ddd;
+          }
+
+          img {
+            height: 50px;
+          }
+
+          .creation {
+            font-size: 0.6rem;
+            a {
+              color: #999;
+              text-decoration: none;
+
+              &:hover {
+                color: #666;
+              }
             }
           }
         }
