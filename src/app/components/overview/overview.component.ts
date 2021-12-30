@@ -12,6 +12,8 @@ import { HttpService } from 'src/app/services/http.service';
 export class OverviewComponent implements OnInit, OnDestroy {
   gameId!: string;
   game!: Game;
+  sameSeriesGames!: Array<Game>;
+
   routeSub!: Subscription;
   gameSub!: Subscription;
 
@@ -24,7 +26,7 @@ export class OverviewComponent implements OnInit, OnDestroy {
     this.routeSub = this.activatedRoute.params.subscribe((params: Params) => {
       this.gameId = params['id'];
       this.getGameDetails(this.gameId);
-      // this.getOtherGames(this.gameId);
+      this.getOtherGames(this.gameId);
     });
   }
 
@@ -37,13 +39,14 @@ export class OverviewComponent implements OnInit, OnDestroy {
           gameResp.rating_top += 1; //
         }
         this.game = gameResp;
-        console.log(gameResp);
+        // console.log(gameResp);
       });
   }
 
   getOtherGames(id: string): void {
     this.httpService.getOtherGames(id).subscribe((response: any) => {
-      console.log(response);
+      this.sameSeriesGames = response.results;
+      console.log(this.sameSeriesGames);
     });
   }
 

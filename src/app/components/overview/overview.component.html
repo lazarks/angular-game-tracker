@@ -98,7 +98,16 @@
         >metacritic website</a
       >
     </div> -->
-    <div class="box tall-span" id="other">Other Games</div>
+    <div class="box tall-span" id="other">
+      <div class="subtitle">Other Games</div>
+      <div *ngFor="let game of sameSeriesGames">
+        <div class="card">
+          <img src="{{ game.background_image }}" alt="thumbnail" />
+          <div class="card-name">{{ game.name }}</div>
+          <div class="card-rating">{{ game.rating }} <span> /5</span></div>
+        </div>
+      </div>
+    </div>
     <div class="box wide-span tall-span" id="screenshots">screenhots</div>
     <div class="box tall-span" id="reddit">reddit</div>
   </div>
