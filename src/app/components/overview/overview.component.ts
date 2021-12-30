@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Game } from 'src/app/models/game.model';
 import { HttpService } from 'src/app/services/http.service';
@@ -21,7 +21,8 @@ export class OverviewComponent implements OnInit, OnDestroy {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private httpService: HttpService
+    private httpService: HttpService,
+    private router: Router
   ) {
     this.slideConfig = {
       slidesToShow: 1,
@@ -52,7 +53,6 @@ export class OverviewComponent implements OnInit, OnDestroy {
           gameResp.rating_top += 1; //
         }
         this.game = gameResp;
-        // console.log(gameResp);
       });
   }
 
@@ -68,6 +68,11 @@ export class OverviewComponent implements OnInit, OnDestroy {
         this.slides.push(obj.image);
       });
     });
+  }
+
+  //other games func
+  openGameOverview(id: string): void {
+    this.router.navigate(['overview', id]);
   }
 
   ngOnDestroy(): void {
