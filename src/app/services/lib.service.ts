@@ -14,8 +14,13 @@ export class LibService {
 
   removeFromLibrary(gameId: string): void {
     this.lib.savedGames = this.lib.savedGames.filter(
-      (item) => item.id !== gameId
+      (game) => game.id !== gameId
     );
+  }
+
+  hasGame(gameId: string): boolean {
+    let x = this.lib.savedGames.some((game) => game.id == gameId);
+    return x;
   }
 
   getLibrary(): Library {

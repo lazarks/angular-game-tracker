@@ -77,6 +77,10 @@
               class="game-thumbnail"
             />
             <p *ngIf="!game.background_image">No image</p>
+            <div class="bookmark" (click)="saveGame(game, $event)">
+              <i class="{{ !isSaved(game) ? 'far fa-bookmark' : '' }}"></i>
+              <i class="{{ isSaved(game) ? 'fas fa-bookmark' : '' }}"></i>
+            </div>
           </div>
           <div class="game-description">
             <p class="game-name">{{ game.name }}</p>

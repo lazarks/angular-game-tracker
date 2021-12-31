@@ -4,7 +4,12 @@
     <div
       class="box"
       [style.backgroundImage]="'url(' + game.background_image + ')'"
-    ></div>
+    >
+      <div class="bookmark" (click)="saveGame()">
+        <i class="{{ !isSaved() ? 'far fa-bookmark' : '' }}"></i>
+        <i class="{{ isSaved() ? 'fas fa-bookmark' : '' }}"></i>
+      </div>
+    </div>
   </header>
 
   <!-- grid -->
@@ -22,7 +27,6 @@
       <div class="genres">
         <span *ngFor="let genre of game.genres">{{ genre.name }}</span>
       </div>
-      <button (click)="saveGame()">save</button>
     </div>
 
     <!-- DESCRIPTION -->

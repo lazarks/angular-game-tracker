@@ -6,6 +6,7 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { APIResponse, Game, Genre, Platform } from 'src/app/models/game.model';
 import { HttpService } from 'src/app/services/http.service';
+import { LibService } from 'src/app/services/lib.service';
 
 @Component({
   selector: 'app-games',
@@ -28,7 +29,8 @@ export class GamesComponent implements OnInit, OnDestroy {
   constructor(
     private httpService: HttpService,
     private activatedRoute: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private libService: LibService
   ) {
     this.selectedGenres = new Array<string>();
     this.platforms = new Array<Platform>();
@@ -105,6 +107,20 @@ export class GamesComponent implements OnInit, OnDestroy {
 
   openGameOverview(id: string): void {
     this.router.navigate(['overview', id]);
+  }
+
+  saveGame(game: Game, event: Event) {
+    event.preventDefault();
+    event.stopPropagation();
+    if (!this.isSaved(game)) {
+      this.libService.saveGameToLibrary(game);
+    } else {
+      this.libService.removeFromLibrary(game.id);
+    }
+  }
+
+  isSaved(game: Game): boolean {
+    return this.libService.hasGame(game.id);
   }
 
   ngOnDestroy(): void {

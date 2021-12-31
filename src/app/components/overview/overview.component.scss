@@ -29,6 +29,22 @@
         background-position-y: -10px;
       }
 
+      .bookmark {
+        position: absolute;
+        top: 30px;
+        right: 50px;
+        cursor: pointer;
+
+        i {
+          font-size: 2rem;
+          color: #fff;
+
+          &:hover {
+            transform: scale(1.5);
+          }
+        }
+      }
+
       @media (min-height: 900px) {
         background-size: auto;
       }

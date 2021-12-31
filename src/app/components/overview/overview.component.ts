@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Game } from 'src/app/models/game.model';
+import { Library } from 'src/app/models/library.model';
 import { Post } from 'src/app/models/post.model';
 import { HttpService } from 'src/app/services/http.service';
 import { LibService } from 'src/app/services/lib.service';
@@ -16,6 +17,7 @@ export class OverviewComponent implements OnInit, OnDestroy {
   game!: Game;
   sameSeriesGames!: Array<Game>;
   redditPosts!: Array<Post>;
+  library: Library;
 
   slides: string[];
   slideConfig: Object;
@@ -38,6 +40,7 @@ export class OverviewComponent implements OnInit, OnDestroy {
       autoplaySpeed: 3000,
     };
     this.slides = [];
+    this.library = libService.getLibrary();
   }
 
   ngOnInit(): void {
@@ -92,7 +95,15 @@ export class OverviewComponent implements OnInit, OnDestroy {
   }
 
   saveGame() {
-    this.libService.saveGameToLibrary(this.game);
+    if (!this.isSaved()) {
+      this.libService.saveGameToLibrary(this.game);
+    } else {
+      this.libService.removeFromLibrary(this.game.id);
+    }
+  }
+
+  isSaved(): boolean {
+    return this.libService.hasGame(this.gameId);
   }
 
   ngOnDestroy(): void {
