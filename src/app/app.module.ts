@@ -14,6 +14,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SearchComponent } from './components/games/search/search.component';
 import { OverviewComponent } from './components/overview/overview.component';
 import { RatingModule } from 'ng-starrating';
+import { SavedComponent } from './components/saved/saved.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { RatingModule } from 'ng-starrating';
     GamesComponent,
     SearchComponent,
     OverviewComponent,
+    SavedComponent,
   ],
   imports: [
     BrowserModule,

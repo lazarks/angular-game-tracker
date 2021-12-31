@@ -20,18 +20,18 @@
   }
 
   .overlay {
-    z-index: -1;
+    z-index: -3;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     min-height: 100%;
-    // background-color: darkcyan;
+    background-color: #111;
     // opacity: 0.5;
 
     // not supported in MS Edge
     // currently on the backlog
-    mix-blend-mode: overlay;
+    // mix-blend-mode: overlay;
   }
 
   .text {
