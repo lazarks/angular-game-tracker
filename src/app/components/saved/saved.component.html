@@ -1,4 +1,9 @@
 <app-navbar [transparent]="false"></app-navbar>
 <div class="container">
   <h2>works!!</h2>
+  <div class="showcase" *ngIf="library && library.savedGames.length > 0">
+    <div *ngFor="let game of library.savedGames">
+      <div>{{ game.name }}</div>
+    </div>
+  </div>
 </div>

@@ -22,6 +22,7 @@
       <div class="genres">
         <span *ngFor="let genre of game.genres">{{ genre.name }}</span>
       </div>
+      <button (click)="saveGame()">save</button>
     </div>
 
     <!-- DESCRIPTION -->

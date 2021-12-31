@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 import { Game } from 'src/app/models/game.model';
 import { Post } from 'src/app/models/post.model';
 import { HttpService } from 'src/app/services/http.service';
+import { LibService } from 'src/app/services/lib.service';
 
 @Component({
   selector: 'app-overview',
@@ -25,7 +26,8 @@ export class OverviewComponent implements OnInit, OnDestroy {
   constructor(
     private activatedRoute: ActivatedRoute,
     private httpService: HttpService,
-    public router: Router
+    public router: Router,
+    private libService: LibService
   ) {
     this.slideConfig = {
       slidesToShow: 1,
@@ -87,6 +89,10 @@ export class OverviewComponent implements OnInit, OnDestroy {
 
   goTo(url: string): void {
     window.location.href = url;
+  }
+
+  saveGame() {
+    this.libService.saveGameToLibrary(this.game);
   }
 
   ngOnDestroy(): void {
