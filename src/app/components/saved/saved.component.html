@@ -1,9 +1,24 @@
 <app-navbar [transparent]="false"></app-navbar>
 <div class="container">
-  <h2>works!!</h2>
+  <div class="info">
+    <h2>
+      games count: <span>{{ library.savedGames.length }}</span>
+    </h2>
+  </div>
   <div class="showcase" *ngIf="library && library.savedGames.length > 0">
-    <div *ngFor="let game of library.savedGames">
-      <div>{{ game.name }}</div>
+    <div class="game" *ngFor="let game of library.savedGames">
+      <div class="thumbnail">
+        <img src="{{ game.background_image }}" alt="game-thumbnail" />
+      </div>
+
+      <div class="desc">
+        <div class="game-name">{{ game.name }}</div>
+        <a routerLink="/overview/{{ game.id }}">visit page</a>
+      </div>
+
+      <div class="remove">
+        <i class="fas fa-bookmark" (click)="unsave(game)"></i>
+      </div>
     </div>
   </div>
 </div>
