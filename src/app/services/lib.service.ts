@@ -10,12 +10,14 @@ export class LibService {
 
   saveGameToLibrary(game: Game): void {
     this.lib.savedGames.push(game);
+    this.saveToLocalStorage();
   }
 
   removeFromLibrary(gameId: string): void {
     this.lib.savedGames = this.lib.savedGames.filter(
       (game) => game.id !== gameId
     );
+    this.saveToLocalStorage();
   }
 
   hasGame(gameId: string): boolean {
@@ -27,5 +29,15 @@ export class LibService {
     return this.lib;
   }
 
-  constructor() {}
+  saveToLocalStorage(): void {
+    let jsonLib = JSON.stringify(this.lib);
+    localStorage.setItem('library', jsonLib);
+  }
+
+  constructor() {
+    let library = localStorage.getItem('library');
+    if (library) {
+      this.lib = JSON.parse(library);
+    }
+  }
 }
