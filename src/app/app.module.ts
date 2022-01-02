@@ -15,6 +15,7 @@ import { SearchComponent } from './components/games/search/search.component';
 import { OverviewComponent } from './components/overview/overview.component';
 import { RatingModule } from 'ng-starrating';
 import { SavedComponent } from './components/saved/saved.component';
+import { RecommendedComponent } from './components/home/recommended/recommended.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { SavedComponent } from './components/saved/saved.component';
     SearchComponent,
     OverviewComponent,
     SavedComponent,
+    RecommendedComponent,
   ],
   imports: [
     BrowserModule,

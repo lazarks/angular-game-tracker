@@ -52,34 +52,8 @@
   </div>
 </section>
 
-<section class="recommended" *ngIf="slides">
-  <div class="section-title">Recommended</div>
-  <ngx-slick-carousel
-    class="carousel"
-    #slickModal="slick-carousel"
-    [config]="slideConfig"
-    (init)="slickInit($event)"
-    (breakpoint)="breakpoint($event)"
-    (afterChange)="afterChange($event)"
-    (beforeChange)="beforeChange($event)"
-  >
-    <div
-      ngxSlickItem
-      *ngFor="let game of slides; let i = index"
-      [attr.data-index]="i"
-      class="slide"
-    >
-      <div class="card" (click)="openGameOverview(game.id)">
-        <h3 class="title">{{ game.name }}</h3>
-        <img src="{{ game.background_image }}" alt="background_image" />
-        <div class="description">
-          <!-- <div class="id">id: {{ i }}</div> -->
-          <div>{{ game.description_raw }}</div>
-        </div>
-      </div>
-    </div>
-  </ngx-slick-carousel>
-</section>
+<!-- recommended -->
+<app-recommended></app-recommended>
 
 <section class="contact">
   <div class="title">
@@ -93,7 +67,7 @@
         <table>
           <tr>
             <td><i class="fas fa-map-marker-alt"></i></td>
-            <td>Krusevac, RS</td>
+            <td>City, Country</td>
           </tr>
           <tr>
             <td><i class="fas fa-phone"></i></td>

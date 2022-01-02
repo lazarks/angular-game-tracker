@@ -1,0 +1,67 @@
+.recommended {
+  background: #111;
+  color: #f3f3f3;
+  height: fit-content;
+  padding: 2rem;
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  .section-title {
+    padding: 2rem;
+    text-align: center;
+    font-size: 2rem;
+    letter-spacing: 0.2rem;
+  }
+
+  .carousel {
+    padding: 0 40px;
+
+    .slide {
+      margin: 0 20px 20px;
+
+      .card {
+        background-color: #111;
+        border-radius: 10px;
+        transition: 0.5s;
+        cursor: pointer;
+
+        &:hover {
+          transform: scale(1.05);
+        }
+
+        .title {
+          padding: 10px;
+        }
+        .description {
+          max-height: 210px;
+          overflow: hidden;
+          padding: 10px;
+          font-size: 0.9rem;
+
+          &:hover {
+            overflow: auto;
+          }
+        }
+        img {
+          width: 100%;
+        }
+      }
+    }
+
+    // description scrollbar
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #999;
+      &:hover {
+        background-color: #ddd;
+      }
+    }
+  }
+}
