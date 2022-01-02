@@ -175,10 +175,10 @@
 }
 
 .contact {
-  height: 100vh;
-  max-height: 1000px;
+  height: fit-content;
 
   .title {
+    min-height: 300px;
     position: relative;
     height: 30%;
     display: flex;
@@ -213,6 +213,7 @@
   }
 
   .content {
+    min-height: 500px;
     background-color: #f3f3f3;
     color: #111;
     height: 70%;
@@ -301,8 +302,8 @@
 
 footer {
   height: 10vh;
-  max-height: 100px;
   position: relative;
+
   background-color: #111;
   color: #f3f3f3;
 
@@ -348,11 +349,10 @@ footer {
 
   section {
     min-height: 100vh;
-    height: fit-content;
+    height: 700px;
   }
 
   footer {
-    min-height: 10vh;
-    height: auto;
+    position: relative;
   }
 }
