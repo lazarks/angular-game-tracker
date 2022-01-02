@@ -80,16 +80,61 @@
         </table>
       </div>
       <div class="form">
-        <form>
+        <form
+          [formGroup]="contactForm"
+          (ngSubmit)="sendMessage()"
+          autocomplete="off"
+        >
           <div class="form-group user-info">
-            <input type="text" placeholder="Name" id="name" />
-            <input type="text" placeholder="Email" id="email" />
+            <input
+              type="text"
+              placeholder="Name"
+              id="name"
+              formControlName="name"
+            />
+            <input
+              type="text"
+              placeholder="Email"
+              id="email"
+              formControlName="email"
+            />
           </div>
           <div class="form-group msg">
-            <input type="text" placeholder="Message" id="message" />
+            <input
+              type="text"
+              placeholder="Message"
+              id="message"
+              formControlName="message"
+            />
+          </div>
+          <div
+            class="alertmessage"
+            *ngIf="contactForm.touched && contactForm.invalid"
+          >
+            <div
+              *ngIf="
+                contactForm.controls['name'].invalid &&
+                contactForm.controls['name'].touched
+              "
+            >
+              Name must have atleast 3 characters!
+            </div>
+            <div
+              *ngIf="
+                contactForm.controls['email'].invalid &&
+                contactForm.controls['email'].touched
+              "
+            >
+              Invalid email!
+            </div>
           </div>
           <div class="form-group">
-            <input type="submit" value="SEND" id="submit" />
+            <input
+              type="submit"
+              value="SEND"
+              id="submit"
+              [disabled]="contactForm.invalid && contactForm.touched"
+            />
           </div>
         </form>
       </div>

@@ -1,12 +1,11 @@
 .hero {
-  height: 90vh; // 100vh - 10vh(navbar)
+  height: 90vh; // 10vh(navbar)
   max-height: 1000px;
   background: transparent;
   padding: 0 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  // transition: 0.5s;
   color: #f3f3f3;
 
   video {
@@ -28,15 +27,9 @@
     width: 100%;
     min-height: 100%;
     background-color: #111;
-    // opacity: 0.5;
-
-    // not supported in MS Edge
-    // currently on the backlog
-    // mix-blend-mode: overlay;
   }
 
   .text {
-    // background-color: red;
     text-align: center;
     width: fit-content;
     position: relative;
@@ -122,7 +115,6 @@
   }
 
   .content {
-    // background: orange;
     padding: 40px;
     width: 100%;
     display: flex;
@@ -170,7 +162,6 @@
         width: 100%;
         min-width: 400px;
         max-width: 700px;
-        // background-color: #111;
       }
     }
   }
@@ -214,9 +205,13 @@
       width: 100%;
       z-index: -1;
       background: #833ab4;
+
+      // not supported in MS Edge
+      // currently on the backlog
       mix-blend-mode: overlay;
     }
   }
+
   .content {
     background-color: #f3f3f3;
     color: #111;
@@ -226,15 +221,13 @@
     align-items: center;
 
     .flex-wrapper {
-      // background: orange;
       display: flex;
       gap: 40px;
+
       .info {
-        // background-color: rgba(255, 0, 0, 0.103);
         table {
           border-spacing: 15px;
           font-size: 1.2rem;
-
           i {
             font-size: 1.3rem;
           }
@@ -243,33 +236,37 @@
 
       .form {
         padding: 15px;
-        // background-color: #999;
+
         .form-group.user-info {
           display: flex;
-          // background-color: red;
           justify-content: space-between;
         }
+
         input {
           padding: 10px;
           font-size: 1.1rem;
           margin-bottom: 10px;
-        }
-
-        #name,
-        #email {
-          width: 48%;
-        }
-
-        #message {
           width: 100%;
+
+          &.ng-invalid.ng-touched {
+            border-color: red;
+            background-color: rgba(255, 191, 208, 0.8);
+          }
+
+          &#name,
+          &#email {
+            width: 48%;
+          }
         }
 
+        // submit button
         .form-group:last-child {
           text-align: end;
 
           input {
             background-color: #111;
             color: #f3f3f3;
+            width: fit-content;
             padding: 5px 10px;
             font-weight: 300;
             cursor: pointer;
@@ -279,6 +276,10 @@
             &:hover {
               padding-left: 20px;
               letter-spacing: 0.5rem;
+            }
+
+            &:disabled {
+              opacity: 0.5;
             }
           }
         }
@@ -303,6 +304,7 @@ footer {
   max-height: 100px;
   position: relative;
   background-color: #111;
+  color: #f3f3f3;
 
   display: flex;
   justify-content: center;
@@ -332,8 +334,9 @@ footer {
 }
 
 // overall responsiveness
+// height:auto because zoom in/out
 @media (max-height: 500px) {
-  .hero {
+  header {
     min-height: 90vh;
     height: auto;
 
@@ -345,7 +348,7 @@ footer {
 
   section {
     min-height: 100vh;
-    height: 700px;
+    height: fit-content;
   }
 
   footer {
