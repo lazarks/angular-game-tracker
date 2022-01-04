@@ -2,12 +2,12 @@ import { Component, Input, OnInit } from '@angular/core';
 import { HttpService } from 'src/app/services/http.service';
 
 @Component({
-  selector: 'app-screenshots',
+  selector: 'game-screenshots',
   templateUrl: './screenshots.component.html',
   styleUrls: ['./screenshots.component.scss'],
 })
 export class ScreenshotsComponent implements OnInit {
-  @Input() gameId!: string;
+  @Input() id!: string;
 
   slides: string[];
   slideConfig: Object;
@@ -25,13 +25,12 @@ export class ScreenshotsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getGameScreenshots(this.gameId);
+    this.getGameScreenshots(this.id);
   }
 
   getGameScreenshots(id: string): void {
     this.httpService.getScreenshots(id).subscribe((response: any) => {
       response.results.forEach((obj: any) => {
-        console.log(obj);
         this.slides.push(obj.image);
       });
     });

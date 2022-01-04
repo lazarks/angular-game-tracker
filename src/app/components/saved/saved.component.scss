@@ -1,6 +1,5 @@
 .container {
   color: #111;
-  // background-color: #999;
   min-height: 500px;
   margin-top: 20px;
   display: flex;
@@ -8,26 +7,27 @@
   justify-content: space-evenly;
 
   .info {
-    background-color: #fff;
-    box-shadow: 2px 4px 10px #999;
-    border-radius: 6px;
-    padding: 2rem;
     height: fit-content;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 6px;
+    box-shadow: 2px 4px 10px #999;
   }
 
   .showcase {
     width: 50%;
 
     .game {
+      height: 150px;
       background-color: #fff;
+      margin-bottom: 30px;
+      border-radius: 6px;
       box-shadow: 2px 4px 10px #999;
+
       display: flex;
       justify-content: space-evenly;
       align-items: center;
-      height: 150px;
-      border-radius: 6px;
 
-      margin-bottom: 30px;
       transition: 0.4s;
 
       &:hover {
@@ -37,9 +37,9 @@
 
       .thumbnail {
         flex: 1 0 0;
-        overflow: hidden;
         height: 100%;
         width: 33%;
+        overflow: hidden;
         img {
           height: 150px;
         }
@@ -47,9 +47,9 @@
 
       .desc {
         flex: 1 0 0;
-        // text-align: center;
         font-size: 1.2rem;
         margin-left: 50px;
+
         display: flex;
         justify-content: space-evenly;
         align-items: center;
@@ -60,14 +60,14 @@
         }
 
         a {
-          // background-color: #111;
+          color: #111;
           font-size: 1rem;
           font-weight: 400;
           padding: 10px;
-          color: #111;
-          cursor: pointer;
-          transition: 0.3s;
+
           letter-spacing: 1px;
+          transition: 0.3s;
+          cursor: pointer;
 
           &:hover {
             letter-spacing: 3px;
@@ -83,11 +83,12 @@
 
         i {
           font-size: 1.5rem;
+          transition: 0.3s;
           cursor: pointer;
 
           &:hover {
-            font-size: 1.6rem;
-            transform: scale(1.4);
+            color: rgba(255, 100, 100, 0.8);
+            transform: scale(1.5);
           }
         }
       }

@@ -3,7 +3,7 @@ import { Post } from 'src/app/models/post.model';
 import { HttpService } from 'src/app/services/http.service';
 
 @Component({
-  selector: 'app-reddit',
+  selector: 'game-reddit',
   templateUrl: './reddit.component.html',
   styleUrls: ['./reddit.component.scss'],
 })

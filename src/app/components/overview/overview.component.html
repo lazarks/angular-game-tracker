@@ -108,15 +108,15 @@
     </div>
 
     <!-- screenhots -->
-    <div class="box wide-span tall-span" id="screenshots">
+    <div class="box wide-span tall-span" id="screenshots" *ngIf="gameId">
       <div class="subtitle">Screenshots</div>
-      <app-screenshots [id]="gameId"></app-screenshots>
+      <game-screenshots [id]="gameId"></game-screenshots>
     </div>
 
     <!-- reddit -->
     <div class="box tall-span" id="reddit">
       <div class="subtitle">Recent posts on Reddit</div>
-      <app-reddit [id]="gameId"></app-reddit>
+      <game-reddit [id]="gameId"></game-reddit>
     </div>
   </div>
 </div>

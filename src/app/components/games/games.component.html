@@ -64,13 +64,16 @@
     </div>
   </div>
 
-  <!-- games -->
+  <!-- games container -->
   <div class="container">
-    <!-- search -->
+    <!-- search-box -->
     <app-search></app-search>
+    <!-- list -->
     <div class="gameList">
       <ng-container *ngFor="let game of games">
+        <!-- game -->
         <div class="game" (click)="openGameOverview(game.id)">
+          <!-- game-thumbnail -->
           <div class="game-thumbnail-container">
             <img
               *ngIf="game.background_image"
@@ -79,13 +82,19 @@
               class="game-thumbnail"
             />
             <p *ngIf="!game.background_image">No image</p>
+
+            <!-- bookmark -->
             <div class="bookmark" (click)="saveGame(game, $event)">
               <i class="{{ !isSaved(game) ? 'far fa-bookmark' : '' }}"></i>
               <i class="{{ isSaved(game) ? 'fas fa-bookmark' : '' }}"></i>
             </div>
           </div>
+
+          <!-- description -->
           <div class="game-description">
             <p class="game-name">{{ game.name }}</p>
+
+            <!-- platforms -->
             <div class="game-platforms">
               <img
                 *ngFor="let gamePlatform of game.parent_platforms"

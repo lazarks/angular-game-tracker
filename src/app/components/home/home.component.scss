@@ -306,31 +306,35 @@ footer {
   position: relative;
 
   background-color: #111;
-  color: #f3f3f3;
 
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 20px;
 
-  i {
-    font-size: 1.3rem;
-    transition: 0.1s;
-    cursor: pointer;
-    &:hover {
-      transform: scale(1.3);
-    }
-    &.fa-facebook-f:hover {
-      color: #3b5998;
-    }
-    &.fa-youtube:hover {
-      color: #ff0000;
-    }
-    &.fa-twitter:hover {
-      color: #1da1f2;
-    }
-    &.fa-instagram:hover {
-      color: #833ab4;
+  a {
+    text-decoration: none;
+    color: #f3f3f3;
+
+    i {
+      font-size: 1.3rem;
+      transition: 0.1s;
+      cursor: pointer;
+      &:hover {
+        transform: scale(1.3);
+      }
+      &.fa-facebook-f:hover {
+        color: #3b5998;
+      }
+      &.fa-youtube:hover {
+        color: #ff0000;
+      }
+      &.fa-twitter:hover {
+        color: #1da1f2;
+      }
+      &.fa-instagram:hover {
+        color: #833ab4;
+      }
     }
   }
 }

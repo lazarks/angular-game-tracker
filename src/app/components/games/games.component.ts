@@ -61,6 +61,7 @@ export class GamesComponent implements OnInit, OnDestroy {
         this.games = gameList.results;
       });
   }
+
   searchByPlatform(event: Event): void {
     if ((<HTMLInputElement>event.target).checked) {
       this.selectedPlatform = +(<HTMLInputElement>event.target).value;
@@ -81,6 +82,8 @@ export class GamesComponent implements OnInit, OnDestroy {
     this.searchGames(this.sort);
   }
 
+  // http
+
   getGenres(): void {
     this.httpService.getGenresList().subscribe((list: APIResponse<Genre>) => {
       this.genres = list.results;
@@ -99,22 +102,25 @@ export class GamesComponent implements OnInit, OnDestroy {
       });
   }
 
-  openGameOverview(id: string): void {
-    this.router.navigate(['overview', id]);
-  }
-
+  // save/remove game to/from library
   saveGame(game: Game, event: Event) {
+    // prevent opening game overview when clicking on bookmark
     event.preventDefault();
     event.stopPropagation();
-    if (!this.isSaved(game)) {
-      this.libService.saveGameToLibrary(game);
-    } else {
+
+    if (this.isSaved(game)) {
       this.libService.removeFromLibrary(game.id);
+    } else {
+      this.libService.saveGameToLibrary(game);
     }
   }
 
   isSaved(game: Game): boolean {
     return this.libService.hasGame(game.id);
+  }
+
+  openGameOverview(id: string): void {
+    this.router.navigate(['overview', id]);
   }
 
   ngOnDestroy(): void {

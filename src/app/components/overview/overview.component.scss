@@ -5,6 +5,7 @@
   height: 100%;
   margin: 0 auto;
 
+  // all (header && .row)
   .box {
     border-radius: 3px;
     background-color: #fff;
@@ -32,13 +33,16 @@
         position: absolute;
         top: 30px;
         right: 50px;
+
         cursor: pointer;
 
         i {
           font-size: 2rem;
           color: #fff;
+          transition: 0.3s;
 
           &:hover {
+            color: rgba(255, 100, 100, 0.8);
             transform: scale(1.5);
           }
         }
@@ -119,6 +123,7 @@
           display: flex;
           justify-content: center;
           flex-wrap: wrap;
+
           span {
             background-color: #111;
             color: #fff;
@@ -167,10 +172,12 @@
           .tags-content {
             margin: 10px 0;
             font-size: 0.9rem;
+
             span {
               padding: 0.5rem;
               text-transform: capitalize;
               transition: 0.3s;
+
               &:hover {
                 font-weight: 800;
               }
@@ -183,9 +190,9 @@
       }
 
       &#developers {
-        font-size: 1.05rem;
         color: #666;
         text-align: center;
+        font-size: 1.05rem;
 
         .team {
           margin-top: 10px;
@@ -263,6 +270,7 @@
       }
     }
 
+    // qs
     @media (max-width: 1140px) {
       grid-template-columns: 1fr 1fr;
 

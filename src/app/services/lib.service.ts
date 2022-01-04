@@ -8,6 +8,23 @@ import { Library } from '../models/library.model';
 export class LibService {
   private lib: Library = new Library();
 
+  constructor() {
+    let library = localStorage.getItem('library');
+    if (library) {
+      this.lib = JSON.parse(library);
+    }
+  }
+
+  getLibrary(): Library {
+    return this.lib;
+  }
+
+  // localStorage
+  saveToLocalStorage(): void {
+    let jsonLib = JSON.stringify(this.lib);
+    localStorage.setItem('library', jsonLib);
+  }
+
   saveGameToLibrary(game: Game): void {
     this.lib.savedGames.push(game);
     this.saveToLocalStorage();
@@ -20,24 +37,8 @@ export class LibService {
     this.saveToLocalStorage();
   }
 
+  // true if lib contains game with given id
   hasGame(gameId: string): boolean {
-    let x = this.lib.savedGames.some((game) => game.id == gameId);
-    return x;
-  }
-
-  getLibrary(): Library {
-    return this.lib;
-  }
-
-  saveToLocalStorage(): void {
-    let jsonLib = JSON.stringify(this.lib);
-    localStorage.setItem('library', jsonLib);
-  }
-
-  constructor() {
-    let library = localStorage.getItem('library');
-    if (library) {
-      this.lib = JSON.parse(library);
-    }
+    return this.lib.savedGames.some((game) => game.id == gameId);
   }
 }

@@ -13,7 +13,6 @@
   }
 
   .filters {
-    // background-color: blue;
     min-width: 300px;
     color: #666;
     padding: 2rem;
@@ -22,12 +21,10 @@
     h4 {
       font-weight: 500;
       color: #666;
-      // background-color: orange;
       padding: 5px 0;
     }
 
     .sort {
-      // background-color: #999;
       padding: 0.5rem 0.5rem 1rem;
 
       select {
@@ -43,17 +40,14 @@
     }
 
     .filter {
-      // background-color: #999;
       padding: 0 0 0 0.5rem;
       &.platforms {
-        // background-color: red;
         padding: 10px;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 10px;
 
         .radio {
-          // background-color: pink;
           display: flex;
 
           .radio-input {
@@ -83,15 +77,13 @@
             &:hover {
               opacity: 0.8;
               transform: scale(1.05);
-              // background: #ddd;
             }
           }
         }
       }
 
       &.genres {
-        // background-color: blue;
-        height: 233px; // show only first 10 genres
+        height: 233px;
         overflow-y: auto;
 
         label {
@@ -106,7 +98,6 @@
     max-width: 810px;
     padding: 1rem 0;
     .gameList {
-      // background-color: orange;
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
@@ -124,6 +115,11 @@
         box-shadow: 2px 4px 10px #999;
         transition: 0.3s;
         cursor: pointer;
+
+        &:hover {
+          box-shadow: 2px 4px 20px #666;
+          transform: translateY(-3px);
+        }
 
         @media (max-width: 560px) {
           max-width: 80%;
@@ -155,17 +151,17 @@
             i {
               font-size: 1.5rem;
               color: #fff;
+              transition: 0.3s;
 
               &:hover {
-                color: #999;
-                transform: scale(1.2);
+                color: rgba(255, 100, 100, 0.95);
+                transform: scale(1.5);
               }
             }
           }
         }
 
         .game-description {
-          // background-color: orange;
           padding: 20px;
           display: flex;
           flex-direction: column;
@@ -176,37 +172,29 @@
 
           .game-name {
             color: #666;
+            text-align: center;
             font-weight: 700;
             font-size: 1rem;
+
             margin-bottom: 20px;
-            white-space: nowrap;
-            text-overflow: ellipsis;
             overflow: hidden;
           }
 
-          .text {
-            font-size: 0.85rem;
-          }
-
           .game-platforms {
-            display: flex;
             background-color: #666;
-            border-radius: 10px;
             width: fit-content;
             margin: 0 auto;
+            border-radius: 10px;
+            gap: 10px;
+
+            display: flex;
             padding: 5px 10px;
             justify-content: center;
-            gap: 10px;
 
             .game-platform {
               width: 20px;
             }
           }
-        }
-
-        &:hover {
-          box-shadow: 2px 4px 20px #666;
-          transform: translateY(-3px);
         }
       }
     }

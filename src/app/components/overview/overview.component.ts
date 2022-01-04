@@ -3,7 +3,6 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Game } from 'src/app/models/game.model';
 import { Library } from 'src/app/models/library.model';
-import { Post } from 'src/app/models/post.model';
 import { HttpService } from 'src/app/services/http.service';
 import { LibService } from 'src/app/services/lib.service';
 
@@ -38,7 +37,7 @@ export class OverviewComponent implements OnInit, OnDestroy {
     });
   }
 
-  // httpService
+  // http
   getGameDetails(id: string): void {
     this.gameSub = this.httpService
       .getGameDetails(id)
@@ -53,7 +52,8 @@ export class OverviewComponent implements OnInit, OnDestroy {
     });
   }
 
-  //other games func
+  // used on "Other Games" box
+  // another game overview
   openGameOverview(id: string): void {
     this.router.navigate(['overview', id]);
   }

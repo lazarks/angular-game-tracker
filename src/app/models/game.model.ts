@@ -3,21 +3,24 @@ export interface Game {
   background_image: string;
   name: string;
   released: string;
-  genres: Array<Genre>;
-  developers: Array<Developer>;
-  publishers: Array<Publishers>;
-  ratings: Array<Ratings>;
   website: string;
   description: string;
   description_raw: string;
-  metacritic: number;
-  metacritic_url: string;
-  parent_platforms: Array<ParentPlatforms>;
-  stores: Array<StoreP>;
-  tags: Array<Tag>;
-  trailers: Array<Trailer>;
+
   rating: number;
   rating_top: number;
+
+  parent_platforms: Array<ParentPlatforms>;
+  genres: Array<Genre>;
+  stores: Array<StoreP>;
+  tags: Array<Tag>;
+
+  developers: Array<Developer>;
+  publishers: Array<Publishers>;
+}
+
+export interface APIResponse<T> {
+  results: Array<T>;
 }
 
 interface StoreP {
@@ -41,10 +44,6 @@ interface Developer {
   image_background: string;
 }
 
-export interface APIResponse<T> {
-  results: Array<T>;
-}
-
 export interface Genre {
   name: string;
   slug: string;
@@ -62,16 +61,4 @@ export interface Platform {
 
 interface Publishers {
   name: string;
-}
-
-interface Ratings {
-  id: number;
-  count: number;
-  title: string;
-}
-
-interface Trailer {
-  data: {
-    max: string;
-  };
 }
