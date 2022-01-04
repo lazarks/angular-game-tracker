@@ -16,11 +16,7 @@ export class OverviewComponent implements OnInit, OnDestroy {
   gameId!: string;
   game!: Game;
   sameSeriesGames!: Array<Game>;
-  redditPosts!: Array<Post>;
   library: Library;
-
-  slides: string[];
-  slideConfig: Object;
 
   routeSub!: Subscription;
   gameSub!: Subscription;
@@ -31,15 +27,6 @@ export class OverviewComponent implements OnInit, OnDestroy {
     public router: Router,
     private libService: LibService
   ) {
-    this.slideConfig = {
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      arrows: true,
-      dots: true,
-      autoplay: true,
-      autoplaySpeed: 3000,
-    };
-    this.slides = [];
     this.library = libService.getLibrary();
   }
 
@@ -48,19 +35,14 @@ export class OverviewComponent implements OnInit, OnDestroy {
       this.gameId = params['id'];
       this.getGameDetails(this.gameId);
       this.getOtherGames(this.gameId);
-      this.getGameScreenshots(this.gameId);
-      this.getRecentRedditPosts(this.gameId);
     });
   }
 
+  // httpService
   getGameDetails(id: string): void {
     this.gameSub = this.httpService
       .getGameDetails(id)
       .subscribe((gameResp: Game) => {
-        // api bug, some games have rating > rating_top
-        if (gameResp.rating > gameResp.rating_top) {
-          gameResp.rating_top += 1; //
-        }
         this.game = gameResp;
       });
   }
@@ -71,37 +53,20 @@ export class OverviewComponent implements OnInit, OnDestroy {
     });
   }
 
-  getGameScreenshots(id: string): void {
-    this.httpService.getScreenshots(id).subscribe((response: any) => {
-      response.results.forEach((obj: any) => {
-        this.slides.push(obj.image);
-      });
-    });
-  }
-
-  getRecentRedditPosts(id: string): void {
-    this.httpService.getRedditPosts(id).subscribe((response: any) => {
-      this.redditPosts = response.results;
-    });
-  }
-
   //other games func
   openGameOverview(id: string): void {
     this.router.navigate(['overview', id]);
   }
 
-  goTo(url: string): void {
-    window.location.href = url;
-  }
-
+  // bookmark icon functionality
+  // save/remove game from library
   saveGame() {
-    if (!this.isSaved()) {
-      this.libService.saveGameToLibrary(this.game);
-    } else {
+    if (this.isSaved()) {
       this.libService.removeFromLibrary(this.game.id);
+    } else {
+      this.libService.saveGameToLibrary(this.game);
     }
   }
-
   isSaved(): boolean {
     return this.libService.hasGame(this.gameId);
   }
@@ -114,29 +79,5 @@ export class OverviewComponent implements OnInit, OnDestroy {
     if (this.routeSub) {
       this.routeSub.unsubscribe();
     }
-  }
-
-  addSlide() {
-    // this.slides.push({ img: 'http://placehold.it/350x150/777777' });
-  }
-
-  removeSlide() {
-    // this.slides.length = this.slides.length - 1;
-  }
-
-  slickInit(e: Object) {
-    // console.log('slick initialized');
-  }
-
-  breakpoint(e: Object) {
-    // console.log('breakpoint');
-  }
-
-  afterChange(e: Object) {
-    // console.log('afterChange');
-  }
-
-  beforeChange(e: Object) {
-    // console.log('beforeChange');
   }
 }

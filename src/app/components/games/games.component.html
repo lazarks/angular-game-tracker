@@ -63,9 +63,11 @@
       </form>
     </div>
   </div>
-  <div class="container">
-    <app-search></app-search>
 
+  <!-- games -->
+  <div class="container">
+    <!-- search -->
+    <app-search></app-search>
     <div class="gameList">
       <ng-container *ngFor="let game of games">
         <div class="game" (click)="openGameOverview(game.id)">

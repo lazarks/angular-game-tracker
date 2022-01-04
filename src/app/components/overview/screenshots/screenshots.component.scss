@@ -1,0 +1,15 @@
+.carousel {
+  padding: 40px 10px;
+  height: 100%;
+
+  .slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 88%;
+      margin: auto;
+      cursor: pointer;
+    }
+  }
+}

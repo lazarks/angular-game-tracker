@@ -56,7 +56,7 @@
       <div class="content">
         <div class="value">
           <span>{{ game.rating }}</span
-          >/{{ game.rating_top }}
+          >/ 5<!-- {{ game.rating_top }} -->
         </div>
         <star-rating
           [value]="game.rating"
@@ -110,40 +110,13 @@
     <!-- screenhots -->
     <div class="box wide-span tall-span" id="screenshots">
       <div class="subtitle">Screenshots</div>
-      <div class="content">
-        <ngx-slick-carousel
-          class="carousel"
-          #slickModal="slick-carousel"
-          [config]="slideConfig"
-          (init)="slickInit($event)"
-          (breakpoint)="breakpoint($event)"
-          (afterChange)="afterChange($event)"
-          (beforeChange)="beforeChange($event)"
-        >
-          <div ngxSlickItem *ngFor="let img of slides" class="slide">
-            <a href="{{ img }}" target="_blank"
-              ><img src="{{ img }}" alt="screenshot"
-            /></a>
-          </div>
-        </ngx-slick-carousel>
-      </div>
+      <app-screenshots [id]="gameId"></app-screenshots>
     </div>
 
     <!-- reddit -->
-    <div class="box tall-span" id="reddit" *ngIf="redditPosts">
+    <div class="box tall-span" id="reddit">
       <div class="subtitle">Recent posts on Reddit</div>
-      <div *ngFor="let post of redditPosts">
-        <div class="card" (click)="goTo(post.url)">
-          <img *ngIf="post.image" src="{{ post.image }}" alt="post-image" />
-          <div class="desc">
-            <div class="card-title">{{ post.name }}</div>
-            <div class="creation">
-              created by
-              <a href="{{ post.username_url }}">{{ post.username }}</a>
-            </div>
-          </div>
-        </div>
-      </div>
+      <app-reddit [id]="gameId"></app-reddit>
     </div>
   </div>
 </div>

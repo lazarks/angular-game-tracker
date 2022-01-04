@@ -16,6 +16,8 @@ import { OverviewComponent } from './components/overview/overview.component';
 import { RatingModule } from 'ng-starrating';
 import { SavedComponent } from './components/saved/saved.component';
 import { RecommendedComponent } from './components/home/recommended/recommended.component';
+import { RedditComponent } from './components/overview/reddit/reddit.component';
+import { ScreenshotsComponent } from './components/overview/screenshots/screenshots.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { RecommendedComponent } from './components/home/recommended/recommended.
     OverviewComponent,
     SavedComponent,
     RecommendedComponent,
+    RedditComponent,
+    ScreenshotsComponent,
   ],
   imports: [
     BrowserModule,

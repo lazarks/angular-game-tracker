@@ -1,0 +1,38 @@
+.subtitle {
+  font-size: 1.4rem;
+}
+
+.card {
+  padding: 10px;
+  background-color: #f3f3f3;
+  color: #111;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  border-radius: 20px;
+
+  &:hover {
+    background-color: #ddd;
+  }
+
+  img {
+    height: auto;
+    width: 100px;
+  }
+
+  .creation {
+    font-size: 0.6rem;
+    a {
+      color: #999;
+      text-decoration: none;
+
+      &:hover {
+        color: #666;
+      }
+    }
+  }
+}

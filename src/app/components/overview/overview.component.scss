@@ -17,7 +17,6 @@
     padding: 30px 30px 0;
     .box {
       height: 505px;
-      background: url("https://media.rawg.io/media/games/618/618c2031a07bbff6b4f611f10b6bcdbc.jpg");
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
@@ -66,10 +65,8 @@
       &:hover {
         transition: 0.6s;
         transform: scale(1.05);
-        overflow: visible;
+        overflow: auto;
         z-index: 999;
-        min-height: 100%;
-        height: fit-content;
       }
 
       &.tall-span {
@@ -77,6 +74,10 @@
       }
       &.wide-span {
         grid-column: span 2;
+      }
+
+      .subtitle {
+        font-size: 1.4rem;
       }
 
       &#overall {
@@ -141,6 +142,7 @@
       &#where {
         display: flex;
         flex-direction: column;
+        overflow: auto;
 
         section {
           .subtitle {
@@ -197,10 +199,6 @@
       }
 
       &#rating {
-        .subtitle {
-          font-size: 1.4rem;
-        }
-
         .content {
           display: flex;
           flex-direction: column-reverse;
@@ -223,10 +221,6 @@
 
         &:hover {
           height: 100%;
-        }
-
-        .subtitle {
-          font-size: 1.4rem;
         }
 
         .card {
@@ -264,83 +258,41 @@
         }
       }
 
-      &#screenshots {
-        .subtitle {
-          font-size: 1.4rem;
-        }
-
-        .carousel {
-          padding: 40px 10px;
-          height: 100%;
-
-          .slide {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            img {
-              width: 88%;
-              margin: auto;
-              cursor: pointer;
-            }
-          }
-        }
-      }
-
       &#reddit {
         overflow: auto;
-
-        &:hover {
-          height: 100%;
-        }
-
-        .subtitle {
-          font-size: 1.4rem;
-        }
-
-        .card {
-          padding: 10px;
-          background-color: #f3f3f3;
-          color: #111;
-          margin-top: 10px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          gap: 10px;
-          font-size: 0.8rem;
-          cursor: pointer;
-          border-radius: 20px;
-
-          &:hover {
-            background-color: #ddd;
-          }
-
-          img {
-            height: 50px;
-          }
-
-          .creation {
-            font-size: 0.6rem;
-            a {
-              color: #999;
-              text-decoration: none;
-
-              &:hover {
-                color: #666;
-              }
-            }
-          }
-        }
       }
     }
 
-    @media (max-width: 800px) {
-      grid-template-columns: 1fr;
+    @media (max-width: 1140px) {
+      grid-template-columns: 1fr 1fr;
 
       .box {
         &.tall-span {
           grid-row: span 1;
         }
         &.wide-span {
+          grid-column: span 1;
+        }
+
+        &#description,
+        &#overall {
+          grid-column: span 2;
+        }
+      }
+    }
+
+    @media (max-width: 800px) {
+      grid-template-columns: 1fr 1fr;
+      grid-auto-rows: auto;
+
+      .box {
+        grid-column: span 2;
+
+        &.wide-span {
+          grid-column: span 2;
+        }
+
+        & > div {
           grid-column: span 1;
         }
       }

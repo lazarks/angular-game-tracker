@@ -1,0 +1,13 @@
+<div class="content">
+  <ngx-slick-carousel
+    class="carousel"
+    #slickModal="slick-carousel"
+    [config]="slideConfig"
+  >
+    <div ngxSlickItem *ngFor="let img of slides" class="slide">
+      <a href="{{ img }}" target="_blank"
+        ><img src="{{ img }}" alt="screenshot"
+      /></a>
+    </div>
+  </ngx-slick-carousel>
+</div>
