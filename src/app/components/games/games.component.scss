@@ -1,6 +1,6 @@
 .cont-wrapper {
   min-height: calc(100vh - 10vh);
-  background-color: #f3f3f3;
+  background-color: var(--smoked-white);
   display: flex;
   justify-content: center;
 
@@ -14,13 +14,13 @@
 
   .filters {
     min-width: 300px;
-    color: #666;
+    color: var(--gray-3);
     padding: 2rem;
 
     h3,
     h4 {
       font-weight: 500;
-      color: #666;
+      color: var(--gray-3);
       padding: 5px 0;
     }
 
@@ -28,7 +28,7 @@
       padding: 0.5rem 0.5rem 1rem;
 
       select {
-        color: #666;
+        color: var(--gray-3);
         border: none;
         outline: none;
         width: 100%;
@@ -55,7 +55,7 @@
           }
 
           .radio-input:checked + .radio-label {
-            background: #111;
+            background: var(--black);
           }
 
           .radio-label {
@@ -67,12 +67,12 @@
             font-size: 0.9rem;
             border-radius: 15px;
             padding: 8px 14px;
-            color: #fff;
-            background: #999;
+            color: var(--white);
+            background: var(--gray-2);
             opacity: 1;
             transition: 0.2s;
             cursor: pointer;
-            box-shadow: 2px 4px 10px #999;
+            box-shadow: var(--b-shadow-1);
 
             &:hover {
               opacity: 0.8;
@@ -94,7 +94,7 @@
   }
 
   .container {
-    background-color: #f3f3f3;
+    background-color: var(--smoked-white);
     max-width: 810px;
     padding: 1rem 0;
     .gameList {
@@ -103,21 +103,21 @@
       flex-wrap: wrap;
 
       .game {
-        background-color: #fff;
-        color: #111;
+        background-color: var(--white);
+        color: var(--black);
         margin: 10px;
         height: 320px;
 
         max-width: 250px;
         width: 100%;
-        border-radius: 6px;
+        border-radius: var(--b-radius);
         overflow: hidden;
-        box-shadow: 2px 4px 10px #999;
+        box-shadow: var(--b-shadow-1);
         transition: 0.3s;
         cursor: pointer;
 
         &:hover {
-          box-shadow: 2px 4px 20px #666;
+          box-shadow: var(--b-shadow-2);
           transform: translateY(-3px);
         }
 
@@ -126,10 +126,10 @@
         }
 
         .game-thumbnail-container {
-          background-color: #999;
+          background-color: var(--gray-2);
           position: relative;
           height: 172px;
-          color: #111;
+          color: var(--black);
           text-align: center;
 
           .game-thumbnail {
@@ -150,7 +150,7 @@
 
             i {
               font-size: 1.5rem;
-              color: #fff;
+              color: var(--white);
               transition: 0.3s;
 
               &:hover {
@@ -181,7 +181,7 @@
           }
 
           .game-platforms {
-            background-color: #666;
+            background-color: var(--gray-3);
             width: fit-content;
             margin: 0 auto;
             border-radius: 10px;

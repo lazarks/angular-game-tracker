@@ -4,8 +4,8 @@
 
 .card {
   padding: 10px;
-  background-color: #f3f3f3;
-  color: #111;
+  background-color: var(--white);
+  color: var(--black);
   margin-top: 10px;
   display: flex;
   justify-content: center;
@@ -16,7 +16,7 @@
   border-radius: 20px;
 
   &:hover {
-    background-color: #ddd;
+    background-color: var(--gray-1);
   }
 
   img {
@@ -27,11 +27,11 @@
   .creation {
     font-size: 0.6rem;
     a {
-      color: #999;
+      color: var(--gray-2);
       text-decoration: none;
 
       &:hover {
-        color: #666;
+        color: var(--gray-3);
       }
     }
   }

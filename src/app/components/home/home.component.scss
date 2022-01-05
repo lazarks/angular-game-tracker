@@ -6,7 +6,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #f3f3f3;
+  color: var(--smoked-white);
 
   video {
     z-index: -2;
@@ -26,7 +26,7 @@
     left: 0;
     width: 100%;
     min-height: 100%;
-    background-color: #111;
+    background-color: var(--black);
   }
 
   .text {
@@ -58,8 +58,8 @@
     }
 
     a {
-      background-color: #fff;
-      color: #111;
+      background-color: var(--white);
+      color: var(--black);
       display: inline-block;
       margin-top: 10px;
       padding: 10px 30px;
@@ -98,8 +98,8 @@
 .about {
   height: fit-content;
   max-height: 1000px;
-  background-color: #f3f3f3;
-  color: #111;
+  background-color: var(--smoked-white);
+  color: var(--black);
 
   .section-title {
     text-align: center;
@@ -110,7 +110,7 @@
     .sub-title {
       font-size: 1rem;
       letter-spacing: 0.1rem;
-      color: orange;
+      color: var(--orange);
       font-style: italic;
     }
   }
@@ -138,8 +138,8 @@
 
       a {
         align-self: center;
-        background-color: #111;
-        color: #fff;
+        background-color: var(--black);
+        color: var(--white);
         display: inline-block;
         margin-top: 10px;
         padding: 10px 30px;
@@ -190,12 +190,12 @@
     .title-main {
       font-size: 2.3rem;
       letter-spacing: 1rem;
-      color: #f3f3f3;
+      color: var(--smoked-white);
     }
     .title-add {
       letter-spacing: 0.1rem;
       font-size: 1rem;
-      color: #f8af4f;
+      color: var(--orange);
     }
 
     .overlay {
@@ -215,8 +215,8 @@
 
   .content {
     min-height: 500px;
-    background-color: #f3f3f3;
-    color: #111;
+    background-color: var(--smoked-white);
+    color: var(--black);
     height: 70%;
     display: flex;
     justify-content: center;
@@ -266,8 +266,8 @@
           text-align: end;
 
           input {
-            background-color: #111;
-            color: #f3f3f3;
+            background-color: var(--black);
+            color: var(--smoked-white);
             width: fit-content;
             padding: 5px 10px;
             font-weight: 300;
@@ -305,7 +305,7 @@ footer {
   height: 10vh;
   position: relative;
 
-  background-color: #111;
+  background-color: var(--black);
 
   display: flex;
   justify-content: center;
@@ -314,7 +314,7 @@ footer {
 
   a {
     text-decoration: none;
-    color: #f3f3f3;
+    color: var(--smoked-white);
 
     i {
       font-size: 1.3rem;

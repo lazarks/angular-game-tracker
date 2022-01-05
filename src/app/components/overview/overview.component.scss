@@ -1,15 +1,15 @@
 .overlay {
-  background-color: #f3f3f3;
-  color: #111;
+  background-color: var(--smoked-white);
+  color: var(--black);
   width: 100%;
   height: 100%;
   margin: 0 auto;
 
   // all (header && .row)
   .box {
-    border-radius: 3px;
-    background-color: #fff;
-    box-shadow: 2px 4px 10px #999;
+    border-radius: var(--b-radius);
+    background-color: var(--white);
+    box-shadow: var(--b-shadow-1);
     position: relative;
     padding: 18px 20px;
   }
@@ -38,7 +38,7 @@
 
         i {
           font-size: 2rem;
-          color: #fff;
+          color: var(--white);
           transition: 0.3s;
 
           &:hover {
@@ -90,9 +90,9 @@
         }
         .release-date {
           font-size: 1.05rem;
-          color: #666;
+          color: var(--gray-3);
           span {
-            color: #111;
+            color: var(--black);
             font-size: 1.2rem;
           }
         }
@@ -103,14 +103,14 @@
             font-size: 1.2rem;
             font-weight: 400;
             text-decoration: none;
-            color: #111;
+            color: var(--black);
             display: inline-block;
             margin: 1rem 1rem 0;
             padding: 0.5rem;
-            border-radius: 3px;
+            border-radius: var(--b-radius);
             transition: 0.2s;
 
-            outline: 1px solid #111;
+            outline: 1px solid var(--black);
 
             &:hover {
               letter-spacing: 1px;
@@ -125,11 +125,11 @@
           flex-wrap: wrap;
 
           span {
-            background-color: #111;
-            color: #fff;
+            background-color: var(--black);
+            color: var(--white);
             padding: 6px 9px;
             margin: 6px;
-            border-radius: 6px;
+            border-radius: var(--b-radius);
             pointer-events: none;
           }
         }
@@ -160,11 +160,11 @@
             flex-wrap: wrap;
             span {
               font-size: 0.9rem;
-              background-color: #111;
-              color: #fff;
+              background-color: var(--black);
+              color: var(--white);
               padding: 6px 9px;
               margin: 6px;
-              border-radius: 6px;
+              border-radius: var(--b-radius);
               pointer-events: none;
             }
           }
@@ -190,7 +190,7 @@
       }
 
       &#developers {
-        color: #666;
+        color: var(--gray-3);
         text-align: center;
         font-size: 1.05rem;
 
@@ -200,7 +200,7 @@
           justify-content: space-between;
 
           span {
-            color: #111;
+            color: var(--black);
           }
         }
       }
@@ -214,7 +214,7 @@
           margin-top: 20px;
           .value {
             font-size: 1.2rem;
-            color: #666;
+            color: var(--gray-3);
             span {
               font-size: 2rem;
               color: red;
@@ -236,12 +236,12 @@
           flex-direction: column;
           justify-content: center;
           gap: 5px;
-          box-shadow: 2px 4px 5px #999;
+          box-shadow: 2px 4px 5px var(--gray-2);
           border-radius: 6px;
           transition: 0.4s;
           cursor: pointer;
           &:hover {
-            box-shadow: 2px 4px 15px #666;
+            box-shadow: 2px 4px 15px var(--gray-3);
           }
 
           img {
@@ -259,7 +259,7 @@
             color: red;
             span {
               font-size: 1rem;
-              color: #999;
+              color: var(--gray-2);
             }
           }
         }

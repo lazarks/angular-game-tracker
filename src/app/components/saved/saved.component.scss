@@ -1,5 +1,5 @@
 .container {
-  color: #111;
+  color: var(--black);
   min-height: 500px;
   margin-top: 20px;
   display: flex;
@@ -8,10 +8,10 @@
 
   .info {
     height: fit-content;
-    background-color: #fff;
+    background-color: var(--white);
     padding: 2rem;
-    border-radius: 6px;
-    box-shadow: 2px 4px 10px #999;
+    border-radius: var(--b-radius);
+    box-shadow: var(--b-shadow-1);
   }
 
   .showcase {
@@ -19,10 +19,10 @@
 
     .game {
       height: 150px;
-      background-color: #fff;
+      background-color: var(--white);
       margin-bottom: 30px;
-      border-radius: 6px;
-      box-shadow: 2px 4px 10px #999;
+      border-radius: var(--b-radius);
+      box-shadow: var(--b-shadow-1);
 
       display: flex;
       justify-content: space-evenly;
@@ -31,7 +31,7 @@
       transition: 0.4s;
 
       &:hover {
-        box-shadow: 2px 4px 20px #666;
+        box-shadow: var(--b-shadow-2);
         transform: translateY(-3px);
       }
 
@@ -60,7 +60,7 @@
         }
 
         a {
-          color: #111;
+          color: var(--black);
           font-size: 1rem;
           font-weight: 400;
           padding: 10px;
@@ -111,7 +111,7 @@
         height: fit-content;
 
         .thumbnail {
-          background-color: #999;
+          background-color: var(--gray-2);
           width: 100%;
           flex: auto;
           height: 172px;
