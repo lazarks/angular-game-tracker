@@ -38,6 +38,7 @@ nav {
 
   .links ul {
     display: flex;
+    overflow: hidden;
 
     li {
       list-style: none;
@@ -45,8 +46,7 @@ nav {
       .nav-link {
         text-decoration: none;
         color: var(--gray-1);
-        padding: 1rem;
-
+        margin: 0 1rem;
         &.activeRoute,
         &:hover {
           color: var(--white);
@@ -101,7 +101,7 @@ nav {
             background-color: rgba(136, 136, 136, 0.336);
           }
 
-          a {
+          .nav-link {
             width: 100%;
             height: 100%;
             display: inline-block;

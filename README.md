@@ -2,42 +2,25 @@
 
 # future additions
 
-### home page: new about("what we offer") section design
-
-### games page: genres filter doesn't work as intended, api bug?, sega.svg not found
+1. home page:
+   - new about("what we offer") section design
+2. games page:
+   - genres filter doesn't work as intended, api prob
+   - sega.svg not found
+   - infinite scroll
+3. overview page:
+   - some reddit pictures don't show ??
+4. saved page (library):
+   - more info ?
+   - recommended games based on saved games
 
 # overview
 
-## responsive navbar - attribute 'transparent:boolean' needed for homepage
-
-## home-component
-
-### hero section with video background - button "explore" navigates(scrolls) to next section
-
-### 'what we offer' section - simple picture with text layout, button 'see all' navigates to 'games component'
-
-### recommended section - new recommended component - slickjs: ngx-slick-carousel used
-
-### contact section - reactive form
-
-### simple footer
-
-## games-component
-
-### filters - simple api requests for selected filter (sortby, platforms, genres(doesn't work as intended))
-
-### search-box - search-component
-
-### list of games - one game card has thumbnail, name, parent platforms and a bookmark that saves/removes game from library(saved comp)
-
-## overview-component
-
-### grid layout with game information
-
-### ng-star-rating module
-
-### new api calls for screenshots, recent reddit posts, other 'same series' games
-
-## saved-component
-
-### displays saved games
+- rapid api - rawg video games database: games, genres, platforms, tags, recent reddit posts, screenshots, same series games + filtering
+- http calls with interceptors
+- slickjs: ngx-slick-carousel used
+- ng-star-rating
+- localStorage
+- reacitve forms
+- responsive layout: flex && grid
+- library (cart-like) && bookmarks (like add-to-cart func)

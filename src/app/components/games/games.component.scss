@@ -184,7 +184,7 @@
             background-color: var(--gray-3);
             width: fit-content;
             margin: 0 auto;
-            border-radius: 10px;
+            border-radius: var(--b-radius);
             gap: 10px;
 
             display: flex;
@@ -192,7 +192,7 @@
             justify-content: center;
 
             .game-platform {
-              width: 20px;
+              width: 15px;
             }
           }
         }

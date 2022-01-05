@@ -14,7 +14,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    min-height: 100%;
+
     object-fit: cover;
     opacity: 0.75;
   }
@@ -122,6 +122,7 @@
     flex-direction: row-reverse;
     justify-content: space-around;
     align-items: center;
+    overflow-x: hidden;
 
     .container {
       padding: 2rem;
@@ -177,6 +178,7 @@
 
 .contact {
   height: fit-content;
+  overflow-x: hidden;
 
   .title {
     min-height: 300px;
