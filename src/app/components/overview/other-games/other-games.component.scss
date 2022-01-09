@@ -1,0 +1,37 @@
+.subtitle {
+  font-size: 1.2rem;
+}
+
+.card {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  box-shadow: 2px 4px 5px var(--gray-2);
+  border-radius: 6px;
+  transition: 0.4s;
+  cursor: pointer;
+  &:hover {
+    box-shadow: 2px 4px 15px var(--gray-3);
+  }
+
+  img {
+    object-fit: contain;
+  }
+
+  .card-name,
+  .card-rating {
+    padding: 10px;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+
+  .card-rating {
+    color: red;
+    span {
+      font-size: 1rem;
+      color: var(--gray-2);
+    }
+  }
+}

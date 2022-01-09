@@ -1,0 +1,8 @@
+<div class="subtitle">Other Games</div>
+<div *ngFor="let game of sameSeriesGames">
+  <div class="card" (click)="openGameOverview(game.id)">
+    <img src="{{ game.background_image }}" alt="thumbnail" />
+    <div class="card-name">{{ game.name }}</div>
+    <div class="card-rating">{{ game.rating }} <span> /5</span></div>
+  </div>
+</div>

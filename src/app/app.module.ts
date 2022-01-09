@@ -19,6 +19,7 @@ import { RecommendedComponent } from './components/home/recommended/recommended.
 import { RedditComponent } from './components/overview/reddit/reddit.component';
 import { ScreenshotsComponent } from './components/overview/screenshots/screenshots.component';
 import { AboutComponent } from './components/home/about/about.component';
+import { OtherGamesComponent } from './components/overview/other-games/other-games.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { AboutComponent } from './components/home/about/about.component';
     RedditComponent,
     ScreenshotsComponent,
     AboutComponent,
+    OtherGamesComponent,
   ],
   imports: [
     BrowserModule,

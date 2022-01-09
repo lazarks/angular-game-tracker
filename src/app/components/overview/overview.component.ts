@@ -14,7 +14,6 @@ import { LibService } from 'src/app/services/lib.service';
 export class OverviewComponent implements OnInit, OnDestroy {
   gameId!: string;
   game!: Game;
-  sameSeriesGames!: Array<Game>;
   library: Library;
 
   routeSub!: Subscription;
@@ -23,7 +22,6 @@ export class OverviewComponent implements OnInit, OnDestroy {
   constructor(
     private activatedRoute: ActivatedRoute,
     private httpService: HttpService,
-    public router: Router,
     private libService: LibService
   ) {
     this.library = libService.getLibrary();
@@ -33,7 +31,6 @@ export class OverviewComponent implements OnInit, OnDestroy {
     this.routeSub = this.activatedRoute.params.subscribe((params: Params) => {
       this.gameId = params['id'];
       this.getGameDetails(this.gameId);
-      this.getOtherGames(this.gameId);
     });
   }
 
@@ -44,18 +41,6 @@ export class OverviewComponent implements OnInit, OnDestroy {
       .subscribe((gameResp: Game) => {
         this.game = gameResp;
       });
-  }
-
-  getOtherGames(id: string): void {
-    this.httpService.getOtherGames(id).subscribe((response: any) => {
-      this.sameSeriesGames = response.results;
-    });
-  }
-
-  // used on "Other Games" box
-  // another game overview
-  openGameOverview(id: string): void {
-    this.router.navigate(['overview', id]);
   }
 
   // bookmark icon functionality
