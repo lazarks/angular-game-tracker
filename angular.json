@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "food-app": {
+    "angular-game-tracker": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -74,10 +74,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "food-app:build:production"
+              "browserTarget": "angular-game-tracker:build:production"
             },
             "development": {
-              "browserTarget": "food-app:build:development"
+              "browserTarget": "angular-game-tracker:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -85,7 +85,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "food-app:build"
+            "browserTarget": "angular-game-tracker:build"
           }
         },
         "test": {
@@ -107,5 +107,5 @@
       }
     }
   },
-  "defaultProject": "food-app"
+  "defaultProject": "angular-game-tracker"
 }
