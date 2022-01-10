@@ -58,7 +58,7 @@
     padding: 30px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: 238px;
+    grid-auto-rows: minmax(230px, 270px);
     grid-gap: 30px;
 
     .box {
@@ -137,7 +137,6 @@
 
       &#description {
         text-align: justify;
-        overflow: auto;
 
         .content {
           position: relative;
@@ -147,7 +146,6 @@
       &#where {
         display: flex;
         flex-direction: column;
-        overflow: auto;
 
         section {
           .subtitle {
@@ -198,6 +196,7 @@
           margin-top: 10px;
           display: flex;
           justify-content: space-between;
+          align-items: center;
 
           span {
             color: var(--black);
@@ -223,15 +222,10 @@
         }
       }
 
-      &#other {
-        overflow: auto;
-
-        &:hover {
-          height: 100%;
-        }
-      }
-
-      &#reddit {
+      &#other,
+      &#reddit,
+      &#description,
+      &#where {
         overflow: auto;
       }
     }

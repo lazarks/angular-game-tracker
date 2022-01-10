@@ -1,26 +1,27 @@
-# game-tracker
+# Angular-Game-Tracker
 
-# future additions
+Game-Tracker website for exploring and saving games. <br/>
+GithubPages: https://lazarks.github.io/angular-game-tracker/
 
-1. home page:
-   - new about("what we offer") section design
-2. games page:
-   - genres filter doesn't work as intended, api prob
-   - sega.svg not found
-   - infinite scroll
-3. overview page:
-   - some reddit pictures don't show ??
-4. saved page (library):
-   - more info ?
-   - recommended games based on saved games
+# Main Technologies & Concepts
 
-# overview
-
-- rapid api - rawg video games database: games, genres, platforms, tags, recent reddit posts, screenshots, same series games + filtering
-- http calls with interceptors
+- rapid api - rawg video games database: games, genres, platforms, tags, recent reddit posts, screenshots, same series games, filtering
+- modular architecture
+- routing
+- route guards (removed | portfolio project - no authentication)
+- http services and interceptors
+- reacitve forms and validation
+- content projection
+- localStorage
+- responsive layout: flex / grid
 - slickjs: ngx-slick-carousel used
 - ng-star-rating
-- localStorage
-- reacitve forms
-- responsive layout: flex && grid
-- library (cart-like) && bookmarks (like add-to-cart func)
+- add-to-cart-like functionalities (library/bookmarks)
+
+# Future work
+
+- refcator filters / create filter components
+- manually fix genres and platforms filter (iOS&PS gives wrong data) (api bug)
+- add infinite scroll / pagination
+- overview page: hide other games (and reddit posts?) box when there's no content
+- saved page: add more info? (like: recommended games based on saved games)

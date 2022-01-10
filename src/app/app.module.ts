@@ -39,11 +39,11 @@ import { OtherGamesComponent } from './components/overview/other-games/other-gam
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SlickCarouselModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
     RatingModule,
+    SlickCarouselModule,
   ],
   providers: [
     {

@@ -4,11 +4,11 @@
 
 .card {
   padding: 10px;
-  background-color: var(--white);
+  background-color: var(--smoked-white);
   color: var(--black);
   margin-top: 10px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   gap: 10px;
   font-size: 0.8rem;
