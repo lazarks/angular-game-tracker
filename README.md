@@ -1,7 +1,6 @@
 # Angular-Game-Tracker
 
 Game-Tracker website for exploring and saving games. <br/>
-GithubPages: https://lazarks.github.io/angular-game-tracker/
 
 # Main Technologies & Concepts
 
